@@ -1,7 +1,6 @@
-# GEOS GCM Fixture
-[![CircleCI](https://circleci.com/gh/GEOS-ESM/GEOSgcm.svg?style=svg)](https://circleci.com/gh/GEOS-ESM/GEOSgcm)
+# Cubed-sphere finite-volume dynamical core fixture
 
-## How to build GEOS GCM
+## How to build FV
 
 ### Preliminary Steps
 
@@ -39,7 +38,7 @@ which obtains the latest `git`, `CMake`, and `manage_externals` modules.
 #### Obtain the Model
 
 ```
-git clone git@github.com:GEOS-ESM/GEOSgcm.git
+git clone git@github.com:GEOS-ESM/FVdycore.git
 ```
 
 ---
