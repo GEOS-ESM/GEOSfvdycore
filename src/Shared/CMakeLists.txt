@@ -3,4 +3,4 @@ esma_add_subdirectories (
   @GMAO_Shared
   )
 
-add_subdirectory (@GFDL_fms GFDL_fms_r4)
+add_subdirectory (@FMS fms_r4)
