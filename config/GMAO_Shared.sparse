@@ -4,6 +4,9 @@
 /GMAO_mpeu
 /GMAO_gfio
 /GEOS_Shared
+/GMAO_etc
+/GEOS_Util
+/GMAO_perllib
 /CMakeLists.txt
 /LICENSE.md
 /README.md
