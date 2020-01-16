@@ -6,3 +6,4 @@
 /build*/
 /install*/
 parallel_build.o*
+/.mepo/
