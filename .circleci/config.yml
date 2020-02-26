@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: gmao/geos-build-env:3.0.0
+      - image: gmao/geos-build-env-gcc-source:6.0.4
     working_directory: /root/project
     steps:
       - checkout
@@ -10,13 +10,19 @@ jobs:
           name: "Versions etc"
           command: mpirun --version && gfortran --version && echo $BASEDIR && pwd && ls
       - run:
-          name: "Checkout external repos"
+          name: "Mepo clone external repos"
           command: |
-            checkout_externals
+            mepo init
+            mepo clone
+            mepo status
       - run:
-          name: "Build"
+          name: "CMake"
           command: |
             mkdir build
             cd build
             cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=gfortran -DCMAKE_BUILD_TYPE=Debug
+      - run:
+          name: "Build"
+          command: |
+            cd build
             make -j2 install
