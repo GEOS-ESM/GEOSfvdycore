@@ -1,44 +1,47 @@
 ESMA_env:
   local: ./@env
   remote: git@github.com:GEOS-ESM/ESMA_env.git
-  tag: v1.4.0
+  tag: v2.0.2
+  develop: master
 
 ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
-  tag: v1.0.10
+  tag: v2.1.2
   develop: develop
   
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: git@github.com:GEOS-ESM/ecbuild.git
-  branch: feature/FindMKL-portability-improvement
+  tag: geos/v1.0.0
 
 FMS:
   local: ./src/Shared/@FMS
   remote: git@github.com:GEOS-ESM/FMS.git
-  tag: geos/orphan/v1.0.3
+  tag: geos/2019.01.01
+  develop: geos/master
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: git@github.com:GEOS-ESM/GMAO_Shared.git
-  tag: v1.0.13
+  tag: v1.1.0
   sparse: ./config/GMAO_Shared.sparse
+  develop: master
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: git@github.com:GEOS-ESM/FVdycoreCubed_GridComp.git
-  tag: v1.0.8
+  tag: v1.1.0
   develop: develop
   
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: git@github.com:GEOS-ESM/GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.0.2
+  tag: geos/v1.1.0
   develop: geos/develop
   
 MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
-  tag: v1.1.12
+  tag: v2.0.0
   develop: develop
