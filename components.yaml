@@ -7,7 +7,7 @@ ESMA_env:
 ESMA_cmake:
   local: ./@cmake
   remote: git@github.com:GEOS-ESM/ESMA_cmake.git
-  tag: v2.1.2
+  branch: feature/aoloso/compact_communicator
   develop: develop
   
 ecbuild:
@@ -43,5 +43,5 @@ fvdycore:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: git@github.com:GEOS-ESM/MAPL.git
-  tag: v2.0.0
+  branch: feature/aoloso/compact_communicator
   develop: develop
