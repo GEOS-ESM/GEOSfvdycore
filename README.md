@@ -1,5 +1,5 @@
 # Cubed-sphere finite-volume dynamical core fixture
-[![CircleCI](https://circleci.com/gh/GEOS-ESM/GEOSfvdycore.svg?style=svg)](https://circleci.com/gh/GEOS-ESM/GEOSfvdycore)
+![Build Test](https://github.com/GEOS-ESM/GEOSfvdycore/workflows/Build%20Test/badge.svg)
 
 ## How to build FV
 
