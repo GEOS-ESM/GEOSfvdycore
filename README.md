@@ -9,10 +9,10 @@
 
 In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
-##### NCCS (SLES11)
+##### NCCS (SLES12)
 
 ```
-module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES11
+module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
 ```
 
 ##### NAS
@@ -39,41 +39,15 @@ which obtains the latest `git`, `CMake`, and `manage_externals` modules.
 #### Obtain the Model
 
 ```
-git clone git@github.com:GEOS-ESM/FVdycore.git
+git clone git@github.com:GEOS-ESM/GEOSfvdycore.git
 ```
 
 ---
-
-### Single Step Building of the Model
-
-If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `gcm_setup` and `fvsetup` in `install/bin`.
-
-#### Develop Version of GEOS
-
-The user will notice two files in the main directory: `Externals.cfg` and `Develop.cfg`. The difference between these two is that `Externals.cfg` always refers to stable tested released subrepositories. The `Develop.cfg` points to the `develop` branch of `@GEOSgcm_GridComp` and `@GEOSgcm_App`. This is equivalent in the CVS days of the difference between `Jason-3_1` and `Jason-UNSTABLE`. In order to build the `Develop.cfg` version of the model with `parallel_build.csh` do:
+#### Use mepo to checkout the model
 ```
-parallel_build.csh -develop
-```
-
-#### Debug Version of GEOS
-
-To obtain a debug version, you can run `parallel_build.csh -debug` which will build with debugging flags. This will build in `build-Debug/` and install into `install-Debug/`.
-
----
-
-### Multiple Steps for Building the Model
-
-The steps detailed below are essentially those that `parallel_build.csh` performs for you. Either method should yield identical builds.
-
-##### Checkout externals
-```
-cd GEOSgcm
-checkout_externals
-```
-###### Checking out develop 
-To use the `Develop.cfg` file, run:
-```
-checkout_externals -e Develop.cfg
+cd GEOSfvdycore
+mepo init
+mepo clone
 ```
 
 #### Build the Model
@@ -107,15 +81,14 @@ This will install to a directory parallel to your `build` directory. If you pref
 ```
 and CMake will install there.
 
+###### Building with Debugging Flags
+To build with debugging flags add:
+```
+-DCMAKE_BUILD_TYPE=Debug
+```
+to the cmake line.
+
 ##### Build and Install with Make
 ```
 make -j6 install
-```
-
-### Run the AGCM
-
-Once the model has built successfully, you will have an `install/` directory in your checkout. To run `gcm_setup` go to the `install/bin/` directory and run it there:
-```
-cd install/bin
-./gcm_setup
 ```
