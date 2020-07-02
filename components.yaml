@@ -2,7 +2,7 @@ env:
   local: ./@env
   remote: ../ESMA_env.git
   tag: v2.1.5
-  develop: master
+  develop: main
 
 cmake:
   local: ./@cmake
@@ -20,7 +20,7 @@ GMAO_Shared:
   remote: ../GMAO_Shared.git
   tag: v1.1.4
   sparse: ./config/GMAO_Shared.sparse
-  develop: master
+  develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
@@ -32,17 +32,17 @@ FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
   tag: geos/2019.01.02
-  develop: geos/master
+  develop: geos/release/2019.01
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.1.2
+  tag: v1.1.3
   develop: develop
 
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.1.1
+  tag: geos/v1.1.2
   develop: geos/develop
 
