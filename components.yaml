@@ -1,7 +1,7 @@
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v2.1.5
+  tag: v2.1.6
   develop: main
 
 cmake:
@@ -25,13 +25,13 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.1.5
+  tag: v2.1.6
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02
+  tag: geos/2019.01.02+noaff
   develop: geos/release/2019.01
 
 FVdycoreCubed_GridComp:
