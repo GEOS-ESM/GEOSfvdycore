@@ -34,7 +34,7 @@ Now load the `GEOSenv` module:
 ```
 module load GEOSenv
 ```
-which obtains the latest `git`, `CMake`, and `manage_externals` modules.
+which obtains the latest `git`, `CMake`, and `mepo` modules.
 
 #### Obtain the Model
 
@@ -46,7 +46,6 @@ git clone git@github.com:GEOS-ESM/GEOSfvdycore.git
 #### Use mepo to checkout the model
 ```
 cd GEOSfvdycore
-mepo init
 mepo clone
 ```
 
@@ -63,7 +62,7 @@ source @env/g5_modules.sh
 ```
 
 ##### Create Build Directory
-We currently do not allow in-source builds of GEOSgcm. So we must make a directory:
+We currently do not allow in-source builds of GEOSfvdycore. So we must make a directory:
 ```
 mkdir build
 ```
