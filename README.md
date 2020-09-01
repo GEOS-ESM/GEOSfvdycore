@@ -39,7 +39,7 @@ which obtains the latest `git`, `CMake`, and `mepo` modules.
 #### Obtain the Model
 
 ```
-git clone git@github.com:GEOS-ESM/GEOSfvdycore.git
+git clone https://github.com/GEOS-ESM/GEOSfvdycore.git
 ```
 
 ---
