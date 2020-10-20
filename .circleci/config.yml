@@ -13,6 +13,24 @@ executors:
       OMPI_MCA_btl_vader_single_copy_mechanism: none
     resource_class: xlarge
 
+workflows:
+  version: 2.1
+  build-and-test:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
+      - make-experiment:
+          requires:
+            - build
+          context:
+            - docker-hub-creds
+      - run-standalone:
+          requires:
+            - make-experiment
+          context:
+            - docker-hub-creds
+
 jobs:
   build:
     executor: gcc-build-env
@@ -122,16 +140,3 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
 
             cat *.log
-
-workflows:
-  version: 2.1
-  build-and-test:
-    jobs:
-      - build
-      - make-experiment:
-          requires:
-            - build
-      - run-standalone:
-          requires:
-            - make-experiment
-
