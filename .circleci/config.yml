@@ -4,11 +4,32 @@ executors:
   gcc-build-env:
     docker:
       - image: gmao/ubuntu20-geos-env-mkl:6.0.16-openmpi_4.0.5-gcc_10.2.0
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_AUTH_TOKEN
     environment:
       OMPI_ALLOW_RUN_AS_ROOT: 1
       OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
       OMPI_MCA_btl_vader_single_copy_mechanism: none
     resource_class: xlarge
+
+workflows:
+  version: 2.1
+  build-and-test:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
+      - make-experiment:
+          requires:
+            - build
+          context:
+            - docker-hub-creds
+      - run-standalone:
+          requires:
+            - make-experiment
+          context:
+            - docker-hub-creds
 
 jobs:
   build:
@@ -119,16 +140,3 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
 
             cat *.log
-
-workflows:
-  version: 2.1
-  build-and-test:
-    jobs:
-      - build
-      - make-experiment:
-          requires:
-            - build
-      - run-standalone:
-          requires:
-            - make-experiment
-
