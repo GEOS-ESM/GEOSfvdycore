@@ -1,7 +1,7 @@
 # Cubed-sphere finite-volume dynamical core fixture
 ![Build Test](https://github.com/GEOS-ESM/GEOSfvdycore/workflows/Build%20Test/badge.svg)
 
-## How to build FV
+## How to build FV Standalone
 
 ### Preliminary Steps
 
@@ -9,8 +9,7 @@
 
 In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
-##### NCCS (SLES12)
-
+##### NCCS
 ```
 module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
 ```
@@ -81,6 +80,7 @@ This will install to a directory parallel to your `build` directory. If you pref
 and CMake will install there.
 
 ###### Building with Debugging Flags
+
 To build with debugging flags add:
 ```
 -DCMAKE_BUILD_TYPE=Debug
@@ -89,5 +89,14 @@ to the cmake line.
 
 ##### Build and Install with Make
 ```
-make -j6 install
+make -jN install
+```
+where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
+
+### Run the FV3 Standalone
+
+Once the model has built successfully, you will have an `install/` directory in your checkout. To run `fv3_setup` go to the `install/bin/` directory and run it there:
+```
+cd install/bin
+./fv3_setup
 ```

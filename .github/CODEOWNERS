@@ -4,8 +4,12 @@
 # precedence.
 
 # The FV3 Team owns all
-
 * @GEOS-ESM/fv3-gatekeepers
+
+# The CMake Team should know/approve these
+/.github/    @GEOS-ESM/cmake-team
+/.circleci/  @GEOS-ESM/cmake-team
+/.codebuild/ @GEOS-ESM/cmake-team
 
 # The GEOS CMake Team is the CODEOWNER for the CMakeLists.txt files in this repository
 CMakeLists.txt @GEOS-ESM/cmake-team

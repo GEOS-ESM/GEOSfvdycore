@@ -2,8 +2,6 @@
 /@cmake/
 /@modules/
 /@env/
-/BUILD/
-/build*/
-/install*/
-parallel_build.o*
 /.mepo/
+parallel_build.o*
+log.*
