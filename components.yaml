@@ -5,13 +5,13 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v3.1.3
+  tag: v3.2.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.3.7
+  tag: v3.3.8
   develop: develop
 
 ecbuild:
@@ -22,7 +22,7 @@ ecbuild:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.3.9
+  tag: v1.3.10
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -47,6 +47,6 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v1.1.5
+  tag: geos/v1.1.6
   develop: geos/develop
 
