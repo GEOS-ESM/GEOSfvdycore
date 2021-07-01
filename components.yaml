@@ -22,7 +22,7 @@ ecbuild:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.4.2
+  tag: v1.4.3
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -41,7 +41,7 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.2.15
+  branch: feature/mathomp4/cascade-lake-nccs
   develop: develop
 
 fvdycore:
