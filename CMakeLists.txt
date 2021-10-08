@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSfvdycore
-  VERSION 1.2.7
+  VERSION 1.3
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -18,16 +18,24 @@ if (NOT CMAKE_BUILD_TYPE)
   set (CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build." FORCE)
   # Set the possible values of build type for cmake-gui
   set_property (CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS
-    "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+    "Debug" "Release" "Aggressive")
 endif ()
 
 set (DOING_GEOS5 YES)
 
 # Should find a better place for this - used in Chem component
 set (ACG_FLAGS -v)
+
+# This flag at R4 means that FV3 is compiled at R4 and *linked* to 
+# FMS built at R4. 
 set (FV_PRECISION "R4" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 
-list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/@cmake")
+# mepo can now clone subrepos in three styles
+foreach (dir cmake @cmake cmake@)
+  if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/${dir})
+    list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}")
+  endif ()
+endforeach ()
 include (esma)
 
 ecbuild_declare_project()
@@ -38,8 +46,9 @@ add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
 include_directories(${MPI_Fortran_INCLUDE_PATH})
 
+esma_mepo_style(env env_dir)
+esma_add_subdirectory (${env_dir})
 # Recursively build source tree
-add_subdirectory (@env)
 add_subdirectory (src)
 
 # https://www.scivision.dev/cmake-auto-gitignore-build-dir/
@@ -54,4 +63,5 @@ install(
    DESTINATION ${CMAKE_INSTALL_PREFIX}
    )
 
-
+# Adds abiilty to tar source
+include (esma_cpack)

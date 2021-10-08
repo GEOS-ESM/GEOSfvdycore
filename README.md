@@ -37,16 +37,123 @@ which obtains the latest `git`, `CMake`, and `mepo` modules.
 
 #### Obtain the Model
 
+On GitHub, there are three ways to clone the model: SSH, HTTPS, or GitHub CLI.
+The first two are "git protocols" which determine how `git` communicates with
+GitHub: either through https or ssh. (The latter is a CLI that uses either ssh or
+https protocol underneath.)
+
+For developers of GEOS, the SSH git protocol is recommended as it can avoid some issues if
+[two-factor authentication
+(2FA)](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa)
+is enabled on GitHub.
+
+##### SSH
+
+To clone the GEOSfvdycore using the SSH url (starts with `git@github.com`), you run:
+```
+git clone git@github.com:GEOS-ESM/GEOSfvdycore.git
+```
+
+###### Permission denied (publickey)
+
+If this is your first time using GitHub with any SSH URL, you might get this
+error:
+```
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+If you do see this, you need to [upload an ssh
+key](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
+to your GitHub account. This needs to be done on any machine that you want to
+use the SSH URL through.
+
+
+##### HTTPS
+
+To clone the model through HTTPS you run:
+
 ```
 git clone https://github.com/GEOS-ESM/GEOSfvdycore.git
 ```
 
+Note that if you use the HTTPS URL and have 2FA set up on GitHub, you will need
+to use [personal access
+tokens](https://docs.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication#authenticating-on-the-command-line-using-https)
+as a password.
+
+##### GitHub CLI
+
+You can also use the [GitHub CLI](https://cli.github.com/) with:
+```
+gh repo clone GEOS-ESM/GEOSfvdycore
+```
+
+Note that when you first use `gh`, it will ask what your preferred git protocol
+is (https or ssh) to use "underneath". The caveats above will apply to whichever
+you choose.
+
 ---
-#### Use mepo to checkout the model
+
+### Single Step Building of the Model
+
+If all you wish is to build the model, you can run `parallel_build.csh` from a head node. Doing so will checkout all the external repositories of the model and build it. When done, the resulting model build will be found in `build/` and the installation will be found in `install/` with setup scripts like `fv3_setup` in `install/bin`.
+
+#### Develop Version of GEOSfvdycore
+
+`parallel_build.csh` provides a special flag for checking out the
+development branch of GMAO_Shared. If you run:
+
+```
+parallel_build.csh -develop
+```
+then `mepo` will run:
+
+```
+mepo develop GMAO_Shared
+```
+
+#### Debug Version of GEOSfvdycore
+
+To obtain a debug version, you can run `parallel_build.csh -debug` which will build with debugging flags. This will build in `build-Debug/` and install into `install-Debug/`.
+
+---
+
+### Multiple Steps for Building the Model
+
+The steps detailed below are essentially those that `parallel_build.csh` performs for you. Either method should yield identical builds.
+
+#### Mepo
+
+The GEOSfvdycore is comprised of a set of sub-repositories. These are
+managed by a tool called [mepo](https://github.com/GEOS-ESM/mepo). To
+clone all the sub-repos, you can run `mepo clone` inside the fixture:
+
 ```
 cd GEOSfvdycore
 mepo clone
 ```
+
+The first command initializes the multi-repository and the second one
+clones and assembles all the sub-repositories according to
+`components.yaml`
+
+#### Checking out develop branch of GMAO_Shared
+
+To get development branch of GMAO_Shared (a la
+the `-develop` flag for `parallel_build.csh`, one needs to run the
+equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
+subrepository is, the equivalent of `-develop` for `mepo` is to
+checkout the development branch of GMAO_Shared:
+```
+mepo develop GMAO_Shared
+```
+
+This must be done *after* `mepo clone` as it is running a git command in
+each sub-repository.
 
 #### Build the Model
 
