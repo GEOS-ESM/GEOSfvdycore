@@ -164,7 +164,7 @@ jobs:
           name: "Run fv3.j"
           command: |
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-            ./fv3.j |& tee /logfiles/fv3_run.log
+            ./fv3.j
       - run:
           name: "Check for EGRESS"
           command: |
@@ -181,10 +181,9 @@ jobs:
                exit 1
             fi
       - run:
-          name: "Cat log file"
+          name: "Copy log files"
           command: |
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-
-            cat *.log
+            cp *.log /logfiles
       - store_artifacts:
           path: /logfiles
