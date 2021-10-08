@@ -1,6 +1,6 @@
 esma_add_subdirectories (
-  @MAPL
-  @GMAO_Shared
+  MAPL
+  GMAO_Shared
   )
 
-add_subdirectory (@FMS fms_r4)
+esma_add_subdirectory (FMS RENAME fms_r4)

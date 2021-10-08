@@ -1,2 +1,2 @@
-add_subdirectory (@FVdycoreCubed_GridComp)
+add_subdirectory (FVdycoreCubed_GridComp)
 
