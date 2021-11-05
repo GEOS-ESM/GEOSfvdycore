@@ -5,7 +5,7 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  branch: bug/pchakrab/reproduce-numpy-crash
+  branch: pchakrab/feature/integrate-fv3core/root-v3.3.1
   develop: main
 
 cmake:
