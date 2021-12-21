@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSfvdycore
-  VERSION 1.3
+  VERSION 1.4.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -34,6 +34,7 @@ set (FV_PRECISION "R4" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 foreach (dir cmake @cmake cmake@)
   if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/${dir})
     list (APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}")
+    set (ESMA_CMAKE_PATH "${CMAKE_CURRENT_LIST_DIR}/${dir}" CACHE PATH "Path to ESMA_cmake code")
   endif ()
 endforeach ()
 include (esma)
@@ -63,5 +64,5 @@ install(
    DESTINATION ${CMAKE_INSTALL_PREFIX}
    )
 
-# Adds abiilty to tar source
+# Adds ability to tar source
 include (esma_cpack)
