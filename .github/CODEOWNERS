@@ -6,11 +6,13 @@
 # The FV3 Team owns all
 * @GEOS-ESM/fv3-gatekeepers
 
-# The CMake Team should know/approve these
-/.github/    @GEOS-ESM/cmake-team
-/.circleci/  @GEOS-ESM/cmake-team
-/.codebuild/ @GEOS-ESM/cmake-team
+# The FV3 gatekeepers and CMake Team should know/approve these
+/.github/    @GEOS-ESM/cmake-team @GEOS-ESM/fv3-gatekeepers
+/.circleci/  @GEOS-ESM/cmake-team @GEOS-ESM/fv3-gatekeepers
+/.codebuild/ @GEOS-ESM/cmake-team @GEOS-ESM/fv3-gatekeepers
 
-# The GEOS CMake Team is the CODEOWNER for the CMakeLists.txt files in this repository
-CMakeLists.txt @GEOS-ESM/cmake-team
+# The GEOS CMake Team should be notified about changes to the CMakeLists.txt files in this repository
+CMakeLists.txt @GEOS-ESM/cmake-team @GEOS-ESM/fv3-gatekeepers
 
+# The GEOS CMake Team should be notified about and approve config changes
+/config/ @GEOS-ESM/cmake-team @GEOS-ESM/fv3-gatekeepers
