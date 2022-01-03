@@ -32,26 +32,28 @@ workflows:
           matrix:
             parameters:
               compiler: [gfortran, ifort]
-          context: 
-            - docker-hub-creds
-      - make-fv3-experiment:
-          name: make-fv3-experiment-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
-          requires:
-            - build-GEOSfvdycore-on-<< matrix.compiler >>
           context:
             - docker-hub-creds
-      - run-fv3-standalone:
-          name: run-fv3-standalone-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
-          requires:
-            - make-fv3-experiment-on-<< matrix.compiler >>
-          context:
-            - docker-hub-creds
+      ##########################################################
+      # - make-fv3-experiment:                                 #
+      #     name: make-fv3-experiment-on-<< matrix.compiler >> #
+      #     matrix:                                            #
+      #       parameters:                                      #
+      #         compiler: [gfortran, ifort]                    #
+      #     requires:                                          #
+      #       - build-GEOSfvdycore-on-<< matrix.compiler >>    #
+      #     context:                                           #
+      #       - docker-hub-creds                               #
+      # - run-fv3-standalone:                                  #
+      #     name: run-fv3-standalone-on-<< matrix.compiler >>  #
+      #     matrix:                                            #
+      #       parameters:                                      #
+      #         compiler: [gfortran, ifort]                    #
+      #     requires:                                          #
+      #       - make-fv3-experiment-on-<< matrix.compiler >>   #
+      #     context:                                           #
+      #       - docker-hub-creds                               #
+      ##########################################################
 
 jobs:
   build-GEOSfvdycore:
@@ -96,14 +98,20 @@ jobs:
             cd ${CIRCLE_WORKING_DIRECTORY}/workspace/build-GEOSfvdycore
             make -j"$(nproc)" install |& tee /logfiles/make.log
             #MEDIUM# make -j4 install |& tee /logfiles/make.log
+      - run:
+          name: "Compress artifacts"
+          command: |
+            gzip -9 /logfiles/*
       - store_artifacts:
           path: /logfiles
       # We need to persist the install for the next step
       # but only if we are running gcm tests
-      - persist_to_workspace:
-          root: workspace
-          paths:
-            - install-GEOSfvdycore
+      ################################
+      # - persist_to_workspace:      #
+      #     root: workspace          #
+      #     paths:                   #
+      #       - install-GEOSfvdycore #
+      ################################
 
   make-fv3-experiment:
     parameters:
