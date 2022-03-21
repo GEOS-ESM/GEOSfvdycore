@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.5.0] - 2022-03-21
 
+### Changed
+
 - Updates to `components.yaml` to bring inline (or exceed) GEOSgcm v10.22.1
 
   - ESMA_env v3.10.0 → v3.13.0
