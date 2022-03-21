@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSfvdycore
-  VERSION 1.4.0
+  VERSION 1.5.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -26,8 +26,8 @@ set (DOING_GEOS5 YES)
 # Should find a better place for this - used in Chem component
 set (ACG_FLAGS -v)
 
-# This flag at R4 means that FV3 is compiled at R4 and *linked* to 
-# FMS built at R4. 
+# This flag at R4 means that FV3 is compiled at R4 and *linked* to
+# FMS built at R4.
 set (FV_PRECISION "R4" CACHE STRING "Precision of FV3 core (R4, R4R8, R8)")
 
 # mepo can now clone subrepos in three styles
