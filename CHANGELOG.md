@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - fvdycore geos/v1.3.0 → geos/v1.4.0
 
 - Update CircleCI to use orb v1
+- Turn on FV3 runs in CI
 
 ## [1.5.0] - 2022-03-21
 

@@ -18,17 +18,15 @@ workflows:
               compiler: [ifort, gfortran]
           baselibs_version: *baselibs_version
           repo: GEOSfvdycore
-          persist_workspace: false # Needs to be true to run fv3/gcm experiment, costs extra
-      #######################################################
-      # - ci/run_fv3:                                       #
-      #     name: run-FV3-on-<< matrix.compiler >>          #
-      #     context:                                        #
-      #       - docker-hub-creds                            #
-      #     matrix:                                         #
-      #       parameters:                                   #
-      #         compiler: [gfortran, ifort]                 #
-      #     baselibs_version: *baselibs_version             #
-      #     requires:                                       #
-      #       - build-GEOSfvdycore-on-<< matrix.compiler >> #
-      #     repo: GEOSfvdycore                              #
-      #######################################################
+          persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+      - ci/run_fv3:
+          name: run-FV3-on-<< matrix.compiler >>
+          context:
+            - docker-hub-creds
+          matrix:
+            parameters:
+              compiler: [gfortran, ifort]
+          baselibs_version: *baselibs_version
+          requires:
+            - build-GEOSfvdycore-on-<< matrix.compiler >>
+          repo: GEOSfvdycore
