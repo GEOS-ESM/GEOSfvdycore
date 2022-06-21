@@ -1,158 +1,34 @@
 version: 2.1
 
+# Anchor to prevent forgetting to update a version
+baselibs_version: &baselibs_version v6.3.1
+
 orbs:
-  circleci-tools: geos-esm/circleci-tools@0.13.0
+  ci: geos-esm/circleci-tools@1
 
 workflows:
-  version: 2.1
-  build-and-test:
+  build-test:
     jobs:
-      - build-GEOSfvdycore:
+      - ci/build:
           name: build-GEOSfvdycore-on-<< matrix.compiler >>
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort]
           context:
             - docker-hub-creds
-      ##########################################################
-      # - make-fv3-experiment:                                 #
-      #     name: make-fv3-experiment-on-<< matrix.compiler >> #
-      #     matrix:                                            #
-      #       parameters:                                      #
-      #         compiler: [gfortran, ifort]                    #
-      #     requires:                                          #
-      #       - build-GEOSfvdycore-on-<< matrix.compiler >>    #
-      #     context:                                           #
-      #       - docker-hub-creds                               #
-      # - run-fv3-standalone:                                  #
-      #     name: run-fv3-standalone-on-<< matrix.compiler >>  #
-      #     matrix:                                            #
-      #       parameters:                                      #
-      #         compiler: [gfortran, ifort]                    #
-      #     requires:                                          #
-      #       - make-fv3-experiment-on-<< matrix.compiler >>   #
-      #     context:                                           #
-      #       - docker-hub-creds                               #
-      ##########################################################
-
-jobs:
-  build-GEOSfvdycore:
-    parameters:
-      compiler:
-        type: string
-    executor:
-      name: circleci-tools/<< parameters.compiler >>
-      resource_class: large
-    working_directory: /root/project
-    steps:
-      - checkout:
-          path: GEOSfvdycore
-      - circleci-tools/versions:
-          compiler: << parameters.compiler >>
-      - circleci-tools/mepoclone:
+          matrix:
+            parameters:
+              compiler: [ifort, gfortran]
+          baselibs_version: *baselibs_version
           repo: GEOSfvdycore
-      - circleci-tools/checkout_if_exists:
-          repo: GEOSfvdycore
-      - circleci-tools/cmake:
-          compiler: << parameters.compiler >>
-          repo: GEOSfvdycore
-      - circleci-tools/buildinstall:
-          repo: GEOSfvdycore
-      - circleci-tools/compress_artifacts
-      - store_artifacts:
-          path: /logfiles
-      # We need to persist the install for the next step
-      # but only if we are running gcm tests
-      ################################
-      # - persist_to_workspace:      #
-      #     root: workspace          #
-      #     paths:                   #
-      #       - install-GEOSfvdycore #
-      ################################
-
-  make-fv3-experiment:
-    parameters:
-      compiler:
-        type: string
-    executor:
-      name: circleci-tools/<< parameters.compiler >>
-      resource_class: large
-    working_directory: /root/project
-    steps:
-      - attach_workspace:
-          at: workspace
-      - run:
-          name: "Run fv3_setup"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/install-GEOSfvdycore/bin
-
-            INPUT_FOR_SETUP=$(cat \<<END_HEREDOC
-            test-fv3-c12
-            test-fv3-c12
-            12
-            72
-            NO
-            NO
-            ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-            NULL
-            END_HEREDOC
-            )
-            echo "$INPUT_FOR_SETUP" > /tmp/input.txt
-
-            cat /tmp/input.txt | ./fv3_setup
-      - run:
-          name: "Change FV_NX, FV_NY, and RUN_CMD"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-            sed -i.bak -e '/set FV_NX/ s/\([0-9]\+\)/1/' -e '/set FV_NY/ s/\([0-9]\+\)/6/' -e '/set RUN_CMD/ c\set RUN_CMD = "mpirun -np "' fv3.j
-      - run:
-          name: "Cat fv3.j"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-            cat fv3.j
-      # We need to persist the install for the next step
-      - persist_to_workspace:
-          root: workspace
-          paths:
-            - test-fv3-c12
-      - store_artifacts:
-          path: /logfiles
-
-  run-fv3-standalone:
-    parameters:
-      compiler:
-        type: string
-    executor:
-      name: circleci-tools/<< parameters.compiler >>
-      resource_class: large
-    working_directory: /root/project
-    steps:
-      - attach_workspace:
-          at: workspace
-      - run:
-          name: "Run fv3.j"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-            ./fv3.j
-      - run:
-          name: "Check for EGRESS"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-
-            # The scratch directory for fv3 standalone isn't consistent
-            SCRDIR=$(find . -type d -name 'scratch*')
-
-            if [[ -f $SCRDIR/EGRESS ]]
-            then
-               echo "EGRESS found!"
-            else
-               echo "EGRESS not found!"
-               exit 1
-            fi
-      - run:
-          name: "Copy log files"
-          command: |
-            cd ${CIRCLE_WORKING_DIRECTORY}/workspace/test-fv3-c12
-            cp *.log /logfiles
-      - store_artifacts:
-          path: /logfiles
+          persist_workspace: false # Needs to be true to run fv3/gcm experiment, costs extra
+      #######################################################
+      # - ci/run_fv3:                                       #
+      #     name: run-FV3-on-<< matrix.compiler >>          #
+      #     context:                                        #
+      #       - docker-hub-creds                            #
+      #     matrix:                                         #
+      #       parameters:                                   #
+      #         compiler: [gfortran, ifort]                 #
+      #     baselibs_version: *baselibs_version             #
+      #     requires:                                       #
+      #       - build-GEOSfvdycore-on-<< matrix.compiler >> #
+      #     repo: GEOSfvdycore                              #
+      #######################################################
