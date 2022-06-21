@@ -17,6 +17,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.6.0] - 2022-06-21
+
+### Changed
+
+- Updates to `components.yaml` to bring inline (or exceed) GEOSgcm v10.22.3
+
+  - ESMA_env v3.13.0 → v3.15.0
+  - ESMA_cmake v3.12.0 → v3.17.0
+  - GMAO_Shared v1.5.3 → v1.5.5
+  - MAPL v2.19.0 → v2.21.3
+  - FVdycoreCubed_GridComp v1.6.0 → v1.8.0
+  - fvdycore geos/v1.3.0 → geos/v1.4.0
+
+- Update CircleCI to use orb v1
+- Turn on FV3 runs in CI
+
 ## [1.5.0] - 2022-03-21
 
 ### Changed
