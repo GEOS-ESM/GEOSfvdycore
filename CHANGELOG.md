@@ -17,6 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.7.0] - 2022-07-14
+
+### Changed
+
+- Updates to `components.yaml` to use Baselibs 7.5.0
+
+  - ESMA_env v3.15.0 → v4.2.0
+  - MAPL v2.21.3 → v2.23.0
+  - FVdycoreCubed_GridComp v1.8.0 → v1.9.0
+
 ## [1.6.0] - 2022-06-21
 
 ### Changed
