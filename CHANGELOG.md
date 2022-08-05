@@ -17,6 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.8.0] - 2022-08-05
+
+### Changed
+
+- Updates to `components.yaml` to match current GEOSgcm
+
+  - GMAO_Shared v1.5.5 → v1.5.7
+  - MAPL v2.23.0 → v2.23.1
+
+- Update FVdycoreCubed_Gridcomp to v1.10.0 for AWS fixes
+
 ## [1.7.0] - 2022-07-14
 
 ### Changed
