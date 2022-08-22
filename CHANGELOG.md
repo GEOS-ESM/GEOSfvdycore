@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.8.1] - 2022-08-22
+
+### Fixed
+
+- Fix handling of `FV_PRECISION` in CMake
+
 ## [1.8.0] - 2022-08-05
 
 ### Changed
