@@ -17,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.9.0] - 2022-08-25
+
+### Changed
+
+- Update to `components.yaml`
+
+  - ESMA_env v4.2.0 → v4.3.0 (Intel 2022.1)
+  - ESMA_cmake v3.17.0 → v3.18.0
+
 ## [1.8.1] - 2022-08-22
 
 ### Fixed
