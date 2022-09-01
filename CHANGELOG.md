@@ -17,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.10.0] - 2022-09-01
+
+### Changed
+
+- Update to `components.yaml`
+
+  - ESMA_env v4.3.0 → v4.4.0 (Intel 2022.1)
+  - FVdycoreCubed_Gridcomp v1.10.0 → v1.11.0
+
 ## [1.9.0] - 2022-08-25
 
 ### Changed
