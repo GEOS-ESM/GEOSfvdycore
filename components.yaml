@@ -5,7 +5,7 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.3.0
+  tag: v4.4.0
   develop: main
 
 cmake:
@@ -41,7 +41,7 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.10.0
+  tag: v1.11.0
   develop: develop
 
 fvdycore:
