@@ -17,6 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.11.0] - 2022-10-11
+
+### Changed
+
+- Update to `components.yaml`
+
+  - GMAO_Shared v1.5.7 → v1.6.1
+  - MAPL v2.23.1 → v2.27.1
+  - FVdycoreCubed_Gridcomp v1.11.0 → v1.12.1
+  - fvdycore geos/v1.4.0 → geos/v1.5.0
+
 ## [1.10.0] - 2022-09-01
 
 ### Changed
