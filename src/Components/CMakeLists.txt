@@ -1,2 +1,2 @@
-add_subdirectory (@FVdycoreCubed_GridComp)
+esma_add_subdirectory (FVdycoreCubed_GridComp)
 
