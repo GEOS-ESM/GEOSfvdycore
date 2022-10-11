@@ -17,6 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.12.0] - 2022-10-11
+
+### Added
+
+- Added `Dockerfile` and GitHub Actions to build and publish Docker image on Docker Hub and GitHub Container Registry on release.
+- Added Dependabot support
+
+### Changed
+
+- Updated some GitHub Actions versions
+
 ## [1.11.0] - 2022-10-11
 
 ### Changed

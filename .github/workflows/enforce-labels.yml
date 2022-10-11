@@ -11,6 +11,6 @@ jobs:
     - uses: yogevbd/enforce-label-action@2.2.2
       with:
         REQUIRED_LABELS_ANY: "0 diff,0 diff trivial,Non 0-diff,0 diff structural"
-        REQUIRED_LABELS_ANY_DESCRIPTION: "Select at least one label ['0 diff', '0 diff trivial', 'Non 0-diff', '0 diff structural']"
         BANNED_LABELS: "Contingent - DNA,Needs Lead Approval"
+        BANNED_LABELS_DESCRIPTION: "The label ${bannedLabel.name} is blocking this PR from being merged"
 
