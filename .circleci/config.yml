@@ -62,7 +62,7 @@ workflows:
             - ghcr-creds
           os_version: *os_version
           baselibs_version: *baselibs_version
-          container_name: fv3-container-test
+          container_name: geosfvdycore
           mpi_name: intelmpi
           mpi_version: 2021.6.0
           compiler_name: intel
@@ -80,7 +80,7 @@ workflows:
             - ghcr-creds
           os_version: *os_version
           baselibs_version: *baselibs_version
-          container_name: fv3-container-test
+          container_name: geosfvdycore
           mpi_name: openmpi
           mpi_version: 4.1.4
           compiler_name: gcc
