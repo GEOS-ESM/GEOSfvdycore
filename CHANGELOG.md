@@ -17,11 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-## [1.12.0] - 2022-10-11
+## [1.12.0] - 2022-10-18
 
 ### Added
 
-- Added `Dockerfile` and GitHub Actions to build and publish Docker image on Docker Hub and GitHub Container Registry on release.
+- Added `Dockerfile` and CircleCI workflow to build and push container to both Docker Hub and GitHub Container Registry on
+  GEOSfvdycore releases. Uses a GitHub Action to trigger CircleCI pipeline on releases.
 - Added Dependabot support
 
 ### Changed

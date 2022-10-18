@@ -19,6 +19,6 @@ RUN git clone -b ${fv3version} https://github.com/GEOS-ESM/GEOSfvdycore.git /GEO
     mkdir build && \
     cd build && \
     cmake .. -DCMAKE_INSTALL_PREFIX=/GEOSfvdycore/install -DBASEDIR=$BASEDIR/Linux -DUSE_F2PY=OFF -DCMAKE_Fortran_COMPILER=$FC -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX && \
-    make -j install/strip && \
+    make -j $(nproc) install/strip && \
     cd / && \
     rm -rf /GEOSfvdycore-src
