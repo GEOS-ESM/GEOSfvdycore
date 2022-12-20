@@ -13,8 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Moved to use GitHub Actions for label enforcement
-
 ### Removed
 
 ### Deprecated
@@ -30,6 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ecbuild geos/v1.2.0 → geos/v1.3.0
   - GMAO_Shared v1.6.1 → v1.6.3
   - MAPL v2.27.1 → v2.33.0
+
+- Moved to use GitHub Actions for label enforcement
 
 - Update Baselibs to 7.7.0 in CI
 
