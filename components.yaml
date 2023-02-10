@@ -29,7 +29,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.34.1
+  branch: release/MAPL-v3
   develop: develop
 
 FMS:
@@ -41,7 +41,7 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v1.12.1
+  branch: release/MAPL-v3
   develop: develop
 
 fvdycore:
