@@ -17,6 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [1.14.0] - 2023-02-09
+
+### Changed
+
+- Update to `components.yaml`
+
+  - ESMA_cmake v3.21.0 → v3.24.0
+  - GMAO_Shared v1.6.3 → v1.7.0
+  - MAPL v2.33.0 → v2.34.1
+
 ## [1.13.0] - 2022-12-20
 
 ### Changed
