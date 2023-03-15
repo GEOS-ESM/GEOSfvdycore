@@ -47,7 +47,7 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.0.0
+  branch: bugfix/mathomp4/fix-standalone
   develop: develop
 
 fvdycore:
