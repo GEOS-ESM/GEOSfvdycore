@@ -13,17 +13,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update to `components.yaml`
-  - ESMA_env v4.8.0 → v4.9.1
-  - ESMA_cmake v3.24.0 → v3.27.0
-  - GMAO_Shared v1.7.0 → v1.8.0
-  - MAPL v2.34.1 → v2.35.2
-  - FVdycoreCubed_GridComp v1.12.1 → v2.0.0
-  - fvdycore geos/v1.5.0 → geos/v2.0.0
-
 ### Removed
 
 ### Deprecated
+
+## [2.0.0] - 2023-03-23
+
+### Changed
+
+- Update to `components.yaml`
+  - ESMA_env v4.8.0 → v4.9.1
+  - ESMA_cmake v3.24.0 → v3.28.0
+  - GMAO_Shared v1.7.0 → v1.8.0
+  - MAPL v2.34.1 → v2.35.3
+  - FVdycoreCubed_GridComp v1.12.1 → v2.1.0
+  - fvdycore geos/v1.5.0 → geos/v2.1.0
+
+### Added
+
+- Added GEOS_Util v1.1.0 to `components.yaml`
 
 ## [1.14.0] - 2023-02-09
 
