@@ -53,6 +53,6 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.1.0
+  tag: geos/v2.2.0
   develop: geos/develop
 
