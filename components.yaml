@@ -29,7 +29,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v1.1.0
+  tag: v1.1.1
   develop: main
 
 MAPL:
@@ -47,12 +47,16 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
+<<<<<<< HEAD
   branch: release/MAPL-v3
+=======
+  tag: v2.2.2
+>>>>>>> main
   develop: develop
 
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: geos/v2.2.0
+  tag: geos/v2.3.0
   develop: geos/develop
 
