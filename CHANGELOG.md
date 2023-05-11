@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - FVdycoreCubed_GridComp v2.2.2 → v2.3.0
   - fvdycore geos/v2.3.0 → geos/v2.4.0
   - GMAO_Shared v1.8.0 → v1.9.0
+- Update CI to test both R4 and R8 FV precision
 
 ## [2.2.0] - 2023-04-03
 
