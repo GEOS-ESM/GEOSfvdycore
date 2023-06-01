@@ -25,8 +25,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - ESMA_env v4.9.1 → v4.9.3
   - ESMA_cmake v3.28.0 → v3.29.0
   - MAPL v2.38.1 → v2.39.1
-  - FVdycoreCubed_GridComp v2.3.0 → v2.4.0
+  - FVdycoreCubed_GridComp v2.3.0 → v2.4.1
   - GEOS_Util v1.1.1 → v2.0.0
+  - NOTE: FVdycoreCubed_GridComp is v2.4.0 with the GCM, but v2.4.1 has fixes for the FV3 standalone
 
 ## [2.3.0] - 2023-05-10
 
