@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Update FVdycoreCubed_GridComp v2.3.1 → v2.4.2
+- Update FVdycoreCubed_GridComp v2.4.1 → v2.4.2
   - This fixes stability issues (see #79)
 
 ## [2.4.0] - 2023-06-01
