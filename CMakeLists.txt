@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSfvdycore
-  VERSION 2.4.0
+  VERSION 2.4.2
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
