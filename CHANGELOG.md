@@ -17,6 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.4.2] - 2023-06-05
+
+### Changed
+
+- Update FVdycoreCubed_GridComp v2.4.2 → v2.4.3
+  - Adds a new `--site` flag to `fv3_setup` for use with containers
+
 ## [2.4.1] - 2023-06-02
 
 ### Fixed
