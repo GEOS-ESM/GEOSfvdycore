@@ -1,5 +1,6 @@
 # Cubed-sphere finite-volume dynamical core fixture
-![Build Test](https://github.com/GEOS-ESM/GEOSfvdycore/workflows/Build%20Test/badge.svg)
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/GEOS-ESM/GEOSfvdycore/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/GEOS-ESM/GEOSfvdycore/tree/main)
 
 ## How to build FV Standalone
 
@@ -202,10 +203,30 @@ where `N` is the number of parallel processes. On discover head nodes, this shou
 
 ### Run the FV3 Standalone
 
+#### Setup an experiment
+
 Once the model has built successfully, you will have an `install/` directory in your checkout. To run `fv3_setup` go to the `install/bin/` directory and run it there:
 ```
 cd install/bin
 ./fv3_setup
+```
+
+#### Run the model
+
+Once you make an experiment, `cd` to the directory and you will have an `fv3.j` file there. You can then submit it with:
+
+```
+sbatch fv3.j
+```
+if at NCCS or:
+```
+qsub fv3.j
+```
+if at NAS.
+
+If you have an interactive node (or are on a non-batch system), just run as:
+```
+./fv3.j |& tee run.log
 ```
 
 ## Contributing

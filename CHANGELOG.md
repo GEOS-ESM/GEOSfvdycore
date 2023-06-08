@@ -21,6 +21,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.4.3] - 2023-06-08
+
+### Fixed
+
+- Update fvdycore geos/v2.4.0 → geos/v2.4.1
+  - Fixes bug with adiabatic/FV3 Standalone runs
+- Update FVdycoreCubed_GridComp v2.4.3 → v2.4.4
+  - Removes `FV3_CONFIG: MONOTONIC` from `fv3.j` as that is not needed with the fix from fvdycore geos/v2.4.1
+
+## [2.4.2] - 2023-06-05
+
+### Changed
+
+- Update FVdycoreCubed_GridComp v2.4.2 → v2.4.3
+  - Adds a new `--site` flag to `fv3_setup` for use with containers
+
+## [2.4.1] - 2023-06-02
+
+### Fixed
+
+- Update FVdycoreCubed_GridComp v2.4.1 → v2.4.2
+  - This fixes stability issues (see #79)
+
 ## [2.4.0] - 2023-06-01
 
 ### Changed
