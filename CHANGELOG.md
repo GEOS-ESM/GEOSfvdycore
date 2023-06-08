@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.5.0] - 2023-06-08
 
+### Changed
+
 - Update to `components.yaml`
   - ESMA_env v4.9.3 → v4.17.0 (Baselibs 7.13.0)
   - GMAO_Shared v1.9.0 → v1.9.1 (match GEOSgcm)
