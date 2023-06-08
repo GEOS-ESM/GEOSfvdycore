@@ -5,7 +5,7 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.9.3
+  tag: v4.17.0
   develop: main
 
 cmake:
@@ -22,7 +22,7 @@ ecbuild:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.0
+  tag: v1.9.1
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
