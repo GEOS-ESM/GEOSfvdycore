@@ -13,13 +13,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update to `components.yaml`
-  - ESMA_env v4.9.3 → v4.17.0
-- Update CI to Baselibs 7.13.0
-
 ### Removed
 
 ### Deprecated
+
+## [2.5.0] - 2023-06-08
+
+- Update to `components.yaml`
+  - ESMA_env v4.9.3 → v4.17.0
+- Update CI to Baselibs 7.13.0
 
 ## [2.4.3] - 2023-06-08
 
