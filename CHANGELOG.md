@@ -17,6 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.6.0] - 2023-06-16
+
+### Changed
+
+- Update to `components.yaml`
+  - FVdycoreCubed_GridComp v2.4.4 → v2.5.0
+    - Changes to make singularity runs simpler
+    - Clean up use of global memory in interp_restarts.x
+    - Separate init and finalize in geos-gtfv3
+  - MAPL v2.39.1 → v2.39.3
+    - Minor fixes
+
 ## [2.5.0] - 2023-06-08
 
 ### Changed
