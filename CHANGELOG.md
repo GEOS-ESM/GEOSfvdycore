@@ -17,19 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-## [2.7.0] - 2023-08-10
+## [2.8.0] - 2023-09-28
 
-### Changed
-
-- Update to `components.yaml` (matches or exceeds GEOSgcm v11.1.1)
-  - ESMA_env v4.17.0 → v4.19.0
-    - Update to Baselibs 7.14.0
-      - ESMF 8.5.0
-      - GFE v1.11.0
-  - ESMA_cmake v3.29.0 → v3.31.1
-    - Add `QUIET_DEBUG` option
-    - Suppress some common Intel warnings
-    - Fixes for NAG
+- Update to `components.yaml` (matches or exceeds GEOSgcm v11.3.0)
+  - ESMA_cmake v3.31.1 → v3.34.0
+    - Support for GEOS under Rosetta2
+    - Updates for NAG
+  - GMAO_Shared v1.9.1 → v1.9.4
+    - CI updates
+    - Updates for util progs
+    - Add PlanetIQ
   - GEOS_Util v2.0.0 → v2.0.2
     - Plot updates
     - Fixes for remapping catchment restarts
@@ -44,7 +41,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Various bug fixes for NAG
   - FVdycoreCubed_GridComp v2.5.0 → v2.6.0
     - More cleanup for Singularity use
-- Update CircleCI
+
+
+## [2.7.0] - 2023-08-10
+
+### Changed
+
+- Update to `components.yaml` (matches or exceeds GEOSgcm v11.1.1)
+  - ESMA_env v4.17.0 → v4.19.0
+    - Update to Baselibs 7.14.0
+      - ESMF 8.5.0
+      - GFE v1.11.0
+  - ESMA_cmake v3.29.0 → v3.31.1
+    - Add `QUIET_DEBUG` option
+    - Suppress some common Intel warnings
+    - Fixes for NAG
+  - GEOS_Util v2.0.2 → v2.0.3
+    - Plot updates
+  - MAPL v2.40.3 → v2.41.0
+    - Updates for ongoing trajectory sampling work
+    - Updates and improvements to documentation
+    - Changes to `MAPL_Resource.F90` to allow NVIDIA compilers to build this file
+    - Adding a new benchmark suite
+    - Cleaning up much of the code to reduce compiler warnings and remarks at compile time:
+      - Converted all uses of `mpif.h` to `use mpi`
+      - Converted all uses of `character*` to `character(len=)`
+      - Removed many unused variables
+      - Added many `_UNUSED_DUMMY()` calls
+      - Converted statement functions to internal functions
+  - FVdycoreCubed_GridComp v2.6.0 → v2.7.0
+    - Updates from HWT Experiments (zero-diff)
+  - fvdycore geos/v2.4.1 → geos/v2.5.0
+    - Updates from HWT Experiments (zero-diff)
 
 ## [2.6.0] - 2023-06-16
 
