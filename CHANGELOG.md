@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-## [2.8.0] - 2023-09-28
+## [2.8.0] - 2023-10-03
 
 - Update to `components.yaml` (matches or exceeds GEOSgcm v11.3.0)
   - ESMA_cmake v3.31.1 → v3.34.0
@@ -27,35 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - CI updates
     - Updates for util progs
     - Add PlanetIQ
-  - GEOS_Util v2.0.0 → v2.0.2
-    - Plot updates
-    - Fixes for remapping catchment restarts
-  - MAPL v2.39.3 → v2.40.3
-    - Update to use ESMF Hconfig (which means ESMF 8.5.0 is *required*; this is from ESMA_env v4.19.0)
-    - Update required GFE library versions
-      - gFTL 1.10.0
-      - gFTL-shared 1.6.1
-      - fArgParse 1.5.0 (if -DBUILD_WITH_FARGPARSE=YES, default=YES)
-      - pFlogger 1.9.5 (if -DBUILD_WITH_PFLOGGER=YES, default=YES)
-    - `ExtDataDriver.x` can now handle tile grids
-    - Various bug fixes for NAG
-  - FVdycoreCubed_GridComp v2.5.0 → v2.6.0
-    - More cleanup for Singularity use
-
-
-## [2.7.0] - 2023-08-10
-
-### Changed
-
-- Update to `components.yaml` (matches or exceeds GEOSgcm v11.1.1)
-  - ESMA_env v4.17.0 → v4.19.0
-    - Update to Baselibs 7.14.0
-      - ESMF 8.5.0
-      - GFE v1.11.0
-  - ESMA_cmake v3.29.0 → v3.31.1
-    - Add `QUIET_DEBUG` option
-    - Suppress some common Intel warnings
-    - Fixes for NAG
   - GEOS_Util v2.0.2 → v2.0.3
     - Plot updates
   - MAPL v2.40.3 → v2.41.0
@@ -71,8 +42,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
       - Converted statement functions to internal functions
   - FVdycoreCubed_GridComp v2.6.0 → v2.7.0
     - Updates from HWT Experiments (zero-diff)
-  - fvdycore geos/v2.4.1 → geos/v2.5.0
+  - fvdycore geos/v2.4.1 → geos/v2.6.0
     - Updates from HWT Experiments (zero-diff)
+    - Update to mapz (non-zero-diff)
+
+## [2.7.0] - 2023-08-10
+
+### Changed
+
+- Update to `components.yaml` (matches or exceeds GEOSgcm v11.1.1)
+  - ESMA_env v4.17.0 → v4.19.0
+    - Update to Baselibs 7.14.0
+      - ESMF 8.5.0
+      - GFE v1.11.0
+  - ESMA_cmake v3.29.0 → v3.31.1
+    - Add `QUIET_DEBUG` option
+    - Suppress some common Intel warnings
+    - Fixes for NAG
+  - GEOS_Util v2.0.0 → v2.0.2
+    - Plot updates
+    - Fixes for remapping catchment restarts
+  - MAPL v2.39.3 → v2.40.3
+    - Update to use ESMF Hconfig (which means ESMF 8.5.0 is *required*; this is from ESMA_env v4.19.0)
+    - Update required GFE library versions
+      - gFTL 1.10.0
+      - gFTL-shared 1.6.1
+      - fArgParse 1.5.0 (if -DBUILD_WITH_FARGPARSE=YES, default=YES)
+      - pFlogger 1.9.5 (if -DBUILD_WITH_PFLOGGER=YES, default=YES)
+    - `ExtDataDriver.x` can now handle tile grids
+    - Various bug fixes for NAG
+  - FVdycoreCubed_GridComp v2.5.0 → v2.6.0
+    - More cleanup for Singularity use
+- Update CircleCI
 
 ## [2.6.0] - 2023-06-16
 
