@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.8.0] - 2023-10-03
 
+### Changed
+
 - Update to `components.yaml` (matches or exceeds GEOSgcm v11.3.0)
   - ESMA_cmake v3.31.1 → v3.34.0
     - Support for GEOS under Rosetta2
