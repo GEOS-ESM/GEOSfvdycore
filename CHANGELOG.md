@@ -17,6 +17,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.9.0] - 2023-10-25
+
+### Changed
+
+- Update to `components.yaml` for SLES15 support at NCCS (matches or exceeds GEOSgcm v11.3.1)
+  - ESMA_env v4.19.0 → v4.20.4
+    - Updates for SCU17 Support at NCCS
+  - ESMA_cmake v3.34.0 → v3.35.0
+    - Updates for SCU17 Support at NCCS
+  - GMAO_Shared v1.9.4 → v1.9.5
+    - Updates for SCU17 Support at NCCS
+  - MAPL v2.41.0 → v2.41.1
+    - Fix missing status check
+  - FVdycoreCubed_GridComp v2.7.0 → v2.8.0
+    - Updates for SCU17 Support at NCCS
+
 ## [2.8.0] - 2023-10-03
 
 ### Changed
