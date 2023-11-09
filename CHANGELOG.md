@@ -34,6 +34,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Fixed incorrect History print during runtime
   - fvdycore geos/v2.6.0 → geos/v2.7.0
     - Add new algorithm for computing coordinates (disabled by default)
+  - FVdycoreCubed_GridComp v2.8.0 → v2.9.0
+    - Add namelist entry for new algorithm for computing coordinates (disabled by default)
 
 ## [2.9.0] - 2023-10-25
 
