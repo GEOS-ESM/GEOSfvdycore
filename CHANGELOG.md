@@ -17,6 +17,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.10.0] - 2023-11-09
+
+- Update to `components.yaml` to match (or exceed) GEOSgcm `main` as of 2023-11-09
+  - ESMA_env v4.20.4 → v4.20.6
+    - More fixes for build.csh
+  - ESMA_cmake v3.35.0 → v3.36.0
+    - Fixes for Intel icx and on macOS Rosetta
+  - GMAO_Shared v1.9.5 → v1.9.6
+    - Fixes for regrid.pl on SLES15
+  - MAPL v2.41.1 → v2.42.0
+    - Various workarounds for building MAPL with MPICH
+    - Added a new benchmark to simulate writing a cubed-sphere file using various tunable strategies
+    - Introduced workaround for Intel 2021.10 bug in generic layer.
+    - Updated write_by_oserver logic so that the decision to write by the oserver is based on whether the output server client is passed in
+    - Fixed incorrect History print during runtime
+  - fvdycore geos/v2.6.0 → geos/v2.7.0
+    - Add new algorithm for computing coordinates (disabled by default)
+
 ## [2.9.0] - 2023-10-25
 
 ### Changed
