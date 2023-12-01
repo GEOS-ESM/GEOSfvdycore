@@ -17,6 +17,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.11.0] - 2023-12-01
+
+### Changed
+
+- Update to `components.yaml` to match GEOSgcm v11.4.0
+  - ESMA_env v4.20.6 → v4.22.0
+    - Update to Baselibs 7.15.1
+  - GEOS_Util v2.0.3 → v2.0.4
+    - Update to remap_restarts.py, cleanup
+  - fvdycore geos/v2.7.0 → geos/v2.8.0
+    - Fix for C180+ layout reproducibility
+- Updated CI to use circleci-tools v2 orb
+
 ## [2.10.0] - 2023-11-09
 
 ### Changed
