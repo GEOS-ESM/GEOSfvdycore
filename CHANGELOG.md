@@ -17,6 +17,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.12.0] - 2023-12-19
+
+### Changed
+
+- Update to `components.yaml` to match GEOSgcm `main` as of 2023-12-19
+  - ESMA_env v4.22.0 → v4.24.0
+    - Update to Baselibs 7.17.0
+  - GEOS_Util v2.0.4 → v2.0.5
+    - Fix in remap_restarts.py for regridding from MERRA2 at non-72 level resolutions
+  - MAPL v2.42.0 → v2.42.4
+    - Various minor fixes found by NAG compiler
+  - fvdycore geos/v2.8.0 → geos/v2.8.1
+    - Fix when running with stretched grid
+
 ## [2.11.0] - 2023-12-01
 
 ### Changed
