@@ -16,8 +16,8 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu20
-baselibs_version: &baselibs_version v7.14.0
-bcs_version: &bcs_version v11.1.0
+baselibs_version: &baselibs_version v7.17.0
+bcs_version: &bcs_version v11.3.0
 tag_build_arg_name: &tag_build_arg_name fv3version
 
 orbs:
@@ -26,6 +26,8 @@ orbs:
 workflows:
   build-test:
     jobs:
+
+      # Build GEOSfvdycore
       - ci/build:
           name: build-GEOSfvdycore-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>
           context:
@@ -38,6 +40,8 @@ workflows:
           repo: GEOSfvdycore
           mepodevelop: false
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
+
+      # Run FV3 standalone
       - ci/run_fv3:
           name: run-FV3-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>-with-GEOSfvdycore
           context:
@@ -50,6 +54,8 @@ workflows:
           requires:
             - build-GEOSfvdycore-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>
           repo: GEOSfvdycore
+
+  # Build and publish docker images
   build-and-publish-docker:
     when:
       equal: [ "release", << pipeline.parameters.GHA_Event >> ]
@@ -84,7 +90,7 @@ workflows:
           baselibs_version: *baselibs_version
           container_name: geosfvdycore
           mpi_name: openmpi
-          mpi_version: 4.1.4
+          mpi_version: 5.0.0
           compiler_name: gcc
           compiler_version: 12.1.0
           image_name: geos-env-mkl

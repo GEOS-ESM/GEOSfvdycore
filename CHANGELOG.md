@@ -17,6 +17,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.13.0] - 2024-01-26
+
+### Changed
+
+- Update to `components.yaml` to match GEOSgcm `main` as of 2024-01-26
+  - ESMA_env v4.24.0 → v4.25.1
+    - Update to Baselibs 7.17.1, fix xgboost build
+    - Moves to use gcc 11 as the Intel backing C compiler
+  - ESMA_cmake v3.36.0 → v3.38.0
+    - Fixes for ifx and NAG
+    - Add Hygon support, add FindESMF.cmake
+  - MAPL v2.42.4 → v2.43.0
+    - Updates for ongoing work with trajectory and station sampling
+    - Examples on how to use the Automatic Code Generator
+    - Fixes for use of the MAPL Python code with Python 3
+    - Fixes for GCC 13 which is still NOT SUPPORTED but this allows for further testing
+    - Fix to allow ExtData2G to be built as static library
+  - FVdycoreCubed_GridComp v2.9.0 → v2.10.0
+    - Updates for NWP and HWT Runs (non-zero-diff)
+
 ## [2.12.0] - 2023-12-19
 
 ### Changed
