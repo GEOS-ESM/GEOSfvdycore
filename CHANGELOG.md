@@ -17,6 +17,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.14.0] - 2024-02-21
+
+### Changed
+
+- Update to `components.yaml` to match GEOSgcm `main` as of 2024-02-21
+  - ESMA_cmake v3.38.0 → v3.41.0
+    - Use `ESMF::ESMF` as the target for ESMF
+    - Update `FindESMF.cmake`
+    - Add `DetermineMPIStack.cmake` to detect MPI stack at CMake time
+  - MAPL v2.43.0 → v2.44.0
+    - Various improvements to History "Samplers" that sample model data at geolocations of simulated instruments. These include support for both trajectories (time dependent lat/lon) and swaths (time-dependent scans)
+    - Added memory utility, MAPL_MemReport that can be used in any code linking MAPL
+    - Added capability in the MAPL ESMF regridding wrapper to apply a destination mask if the destination grid contains a mask
+    - Updates for using MAPL with GEOS in a hybrid MPI+OpenMP paradigm
+    - Various fixes for NVHPC work
+    - This version of MAPL now **_requires_** ESMF 8.6.0 as MAPL now uses functionality only supported in that version. Moreover, all references to ESMF as a CMake target are now done as `ESMF::ESMF`. This is supported in Baselibs build with ESMA_cmake v3.40.0 (**_required_** for Baselibs builds) and for non-Baselibs builds (i.e., spack) via a newer `FindESMF.cmake` file (currently from ESMF `develop` and will be in ESMF 8.6.1+).
+  = GMAO_Shared v1.9.6 → v1.9.7
+    - Updates for WMMA
+  - FVdycoreCubed_GridComp v2.10.0 → v2.11.0
+    - Updates to `fv3_setup` to use CMake detection of MPI stack (requires ESMA_cmake v3.41.0)
+
 ## [2.13.0] - 2024-01-26
 
 ### Changed
