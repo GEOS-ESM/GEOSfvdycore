@@ -11,31 +11,31 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.38.0
+  branch: feature/pchakrab/hierarchical-mepo
   develop: develop
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.6
+  branch: feature/pchakrab/hierarchical-mepo
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.43.0
+  branch: feature/pchakrab/hierarchical-mepo
   develop: develop
 
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.8
+  branch: feature/pchakrab/hierarchical-mepo
   develop: geos/release/2019.01
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.10.0
+  branch: feature/pchakrab/hierarchical-mepo
   develop: develop
 
