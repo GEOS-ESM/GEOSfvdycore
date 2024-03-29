@@ -30,7 +30,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  branch: feature/pchakrab/hierarchical-mepo
+  tag: geos/2019.01.02+noaff.8
   develop: geos/release/2019.01
 
 FVdycoreCubed_GridComp:
