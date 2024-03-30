@@ -24,7 +24,7 @@ GMAO_Shared:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  branch: feature/pchakrab/hierarchical-mepo
+  tag: hierarchical-mepo-based-on-v2.13.0
   develop: develop
 
 FMS:
