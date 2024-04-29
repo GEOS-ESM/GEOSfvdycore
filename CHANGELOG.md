@@ -17,6 +17,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.15.0] - 2024-04-30
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2024-04-29
+  - ESMA_env v4.25.1 → v4.29.0
+    - Update to Baselibs 7.24.0
+  - ESMA_cmake v3.41.0 → v3.45.0
+    - Add quiet flag to NAG
+    - Limit tests to ESSENTIAL
+    - Set BUILT_ON_SLES15 to FALSE if not
+    - Change to FindESMF.cmake and other updates
+  - GEOS_Util v2.0.5 → v2.0.8
+    - Various plots and remap updates
+  - MAPL v2.44.0 → v2.45.0
+    - Many, many, many changes (see https://github.com/GEOS-ESM/MAPL/compare/v2.44.0...v2.45.0)
+  - FVdycoreCubed_GridComp v2.11.0 → v2.11.1
+    - Fix variable use before set
+  - fvdycore geos/v2.8.1 → geos/v2.8.2
+    - Fix uninitialized variables
+
 ## [2.14.0] - 2024-02-21
 
 ### Changed
