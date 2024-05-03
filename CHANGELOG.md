@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-## [2.15.0] - 2024-04-30
+## [2.15.0] - 2024-05-03
 
 ### Changed
 
@@ -31,8 +31,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Change to FindESMF.cmake and other updates
   - GEOS_Util v2.0.5 → v2.0.8
     - Various plots and remap updates
-  - MAPL v2.44.0 → v2.45.0
+  - MAPL v2.44.0 → v2.46.0
     - Many, many, many changes (see https://github.com/GEOS-ESM/MAPL/compare/v2.44.0...v2.45.0)
+    - Support for spack build
   - FVdycoreCubed_GridComp v2.11.0 → v2.11.1
     - Fix variable use before set
   - fvdycore geos/v2.8.1 → geos/v2.8.2
