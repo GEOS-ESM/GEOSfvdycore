@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2024-04-29
   - ESMA_env v4.25.1 → v4.29.0
     - Update to Baselibs 7.24.0
-  - ESMA_cmake v3.41.0 → v3.45.0
+  - ESMA_cmake v3.41.0 → v3.45.1
     - Add quiet flag to NAG
     - Limit tests to ESSENTIAL
     - Set BUILT_ON_SLES15 to FALSE if not
