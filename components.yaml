@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.45.1
+  tag: v3.48.0
   develop: develop
 
 ecbuild:
@@ -22,7 +22,7 @@ ecbuild:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.7
+  tag: v1.9.8
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
@@ -41,7 +41,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.8
+  tag: geos/2019.01.02+noaff.10
   develop: geos/release/2019.01
 
 FVdycoreCubed_GridComp:
