@@ -32,7 +32,7 @@ end
 
 if (-d ${ESMADIR}/@env || -d ${ESMADIR}/env@ || -d ${ESMADIR}/env) then
    if ( "$DEVELOP" == "TRUE" ) then
-      echo "Checking out development branch of GMAO_Shared and GEOS_Util"
+      echo "Checking out development branches of GMAO_Shared and GEOS_Util"
       mepo develop GMAO_Shared GEOS_Util
    endif
 else
