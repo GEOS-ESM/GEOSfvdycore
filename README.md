@@ -14,7 +14,6 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 
 ###### bash
 
-
 ```bash
 umask 0022
 ulimit -s unlimited
