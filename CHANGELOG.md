@@ -17,6 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.17.0] - 2024-09-25
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2024-09-25
+  - ESMA_cmake v3.48.0 → v3.51.0
+  - FVdycoreCubed_GridComp v2.11.1 → v2.12.0
+- Update CircleCI to use v4 orb
+
 ## [2.16.0] - 2024-08-12
 
 ### Changed
