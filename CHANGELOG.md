@@ -17,6 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.18.0] - 2024-09-30
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2024-09-30
+  - MAPL v2.47.1 → v2.48.0
+
 ## [2.17.0] - 2024-09-25
 
 ### Changed
