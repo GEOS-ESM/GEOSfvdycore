@@ -162,6 +162,20 @@ Note that when you first use `gh`, it will ask what your preferred git protocol
 is (https or ssh) to use "underneath". The caveats above will apply to whichever
 you choose.
 
+### Setting up `mepo` to use blobless clones
+
+The GEOS GCM uses a Python utility called [mepo](https://github.com/GEOS-ESM/mepo/) to manage **m**ultiple git r**epo**sitories instead of using other technologies like Git
+submodules. `mepo` uses a YAML file that provides a list of components (and their versions) that are required for a particular configuration of GEOS GCM.
+
+We *highly* recommend setting up `mepo` to use [blobless clones](https://github.blog/open-source/git/get-up-to-speed-with-partial-clone-and-shallow-clone/) to speed
+up cloning of the sub-repositories, especially on discover. To do this, there is a one-time command to run:
+
+```
+mepo config set clone.partial blobless
+```
+
+This will set up `mepo` to use blobless clones for all future clones by adding an entry to `~/.mepoconfig`.
+
 ---
 
 ### Single Step Building of the Model
@@ -244,11 +258,12 @@ The advantages of this is that you can build both a Debug and Release version wi
 CMake generates the Makefiles needed to build the model.
 ```
 cd build
-cmake .. -DBASEDIR=$BASEDIR/Linux -DCMAKE_Fortran_COMPILER=ifort -DCMAKE_INSTALL_PREFIX=../install
+cmake -B build --install-prefix=$(pwd)/install
 ```
-This will install to a directory parallel to your `build` directory. If you prefer to install elsewhere change the path in:
+where `$BASEDIR` is the path to the directory where the model will be installed. This is typically the directory parallel to the `build` directory.
+If you prefer to install elsewhere change the path in:
 ```
--DCMAKE_INSTALL_PREFIX=<path>
+--install-prefix=/path/to/install
 ```
 and CMake will install there.
 
@@ -262,7 +277,7 @@ to the cmake line.
 
 ##### Build and Install with Make
 ```
-make -jN install
+cmake --build build --parallel N
 ```
 where `N` is the number of parallel processes. On discover head nodes, this should only be as high as 2 due to limits on the head nodes. On a compute node, you can set `N` has high as you like, though 8-12 is about the limit of parallelism in our model's make system.
 

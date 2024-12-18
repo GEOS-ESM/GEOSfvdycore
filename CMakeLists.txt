@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSfvdycore
-  VERSION 2.18.0
+  VERSION 2.19.0
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
@@ -79,16 +79,10 @@ if (NOT Baselibs_FOUND)
   # Another issue with historical reasons, old/wrong zlib target used in GEOS
   add_library(ZLIB::zlib ALIAS ZLIB::ZLIB)
 
-  # Using FMS from spack requires updates to fvdycore due to interface changes
-  # in FMS 2022. This is commented for now until this transition can occur.
-  #################################################
-  # find_package(FMS QUIET COMPONENTS R4 R8)      #
-  # if (FMS_FOUND)                                #
-  #   # We need aliases due to historical reasons #
-  #   add_library(fms_r4 ALIAS FMS::fms_r4)       #
-  #   add_library(fms_r8 ALIAS FMS::fms_r8)       #
-  # endif ()                                      #
-  #################################################
+  find_package(MAPL 2.51 QUIET)
+  if (MAPL_FOUND)
+    message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
+  endif ()
 
 endif ()
 
