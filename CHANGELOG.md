@@ -17,7 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
-## [2.19.0] - 2024-12-19
+## [2.19.1] - 2024-12-18
+
+### Changed
+
+- Update minimum CMake version to 3.24 (needed for f2py/meson support)
+
+## [2.19.0] - 2024-12-18
 
 ### Changed
 

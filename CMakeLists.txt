@@ -1,10 +1,10 @@
-cmake_minimum_required (VERSION 3.17)
+cmake_minimum_required (VERSION 3.24)
 cmake_policy (SET CMP0053 NEW)
 cmake_policy (SET CMP0054 NEW)
 
 project (
   GEOSfvdycore
-  VERSION 2.19.0
+  VERSION 2.19.1
   LANGUAGES Fortran CXX C)  # Note - CXX is required for ESMF
 
 if ("${PROJECT_SOURCE_DIR}" STREQUAL "${PROJECT_BINARY_DIR}")
