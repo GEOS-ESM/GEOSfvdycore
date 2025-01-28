@@ -5,7 +5,7 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.34.0
+  tag: v4.34.1
   develop: main
 
 cmake:
