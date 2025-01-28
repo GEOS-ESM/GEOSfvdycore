@@ -17,11 +17,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.21.0] - 2025-01-28
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-01-28
+  - ESMA_env v4.34.0 → v4.34.1
+  - GEOS_Util v2.1.3 → v2.1.6
+  - MAPL v2.51.2 → v2.52.0
+- Various minor fixes to CMake and CircleCI
+
 ## [2.20.0] - 2025-01-16
 
 ### Changed
 
-- Update to `components.yaml` as of 2025-01-16
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-01-16
   - ESMA_env v4.29.1 → v4.34.0
   - ESMA_cmake v3.55.0 → v3.56.0
   - MAPL v2.51.1 → v2.51.2
