@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.11.0
+  tag: v4.12.0
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc8
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -37,17 +37,17 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.52.0
+  tag: v2.54.1
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc10
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc9
+  tag: GCMv12-rc11
   develop: feature/sdrabenh/gcm_v12
