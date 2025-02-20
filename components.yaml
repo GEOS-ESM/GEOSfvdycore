@@ -49,5 +49,5 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc11
+  branch: feature/mathomp4/v12-benchmark-fv3
   develop: feature/sdrabenh/gcm_v12
