@@ -43,7 +43,7 @@ MAPL:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc11
+  branch: feature/mathomp4/v12-benchmark-fv3
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
