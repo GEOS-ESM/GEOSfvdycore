@@ -94,6 +94,9 @@ add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
 include_directories(${MPI_Fortran_INCLUDE_PATH})
 
+# For GEOSfvdycore, we need to use the GFDL from fvdycore
+option(USE_GFDL_MP_FROM_FV "Use GFDL microphysics from fvdycore" ON)
+
 esma_mepo_style(env env_dir)
 esma_add_subdirectory (${env_dir})
 # Recursively build source tree
