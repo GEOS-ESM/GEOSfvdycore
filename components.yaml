@@ -43,11 +43,11 @@ MAPL:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  branch: feature/mathomp4/v12-benchmark-fv3
+  tag: v3.0.0-rc.1
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  branch: feature/mathomp4/v12-benchmark-fv3
+  tag: geos/v3.0.0-rc.1
   develop: feature/sdrabenh/gcm_v12
