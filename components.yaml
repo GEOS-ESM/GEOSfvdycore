@@ -32,6 +32,12 @@ GEOS_Util:
   tag: GCMv12-rc13
   develop: feature/sdrabenh/gcm_v12
 
+GMAO_perllib:
+  local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
+  remote: ../GMAO_perllib.git
+  tag: v1.1.0
+  develop: main
+
 # When updating the MAPL version, also update the MAPL version in the
 # CMakeLists.txt file for non-Baselibs builds
 MAPL:
