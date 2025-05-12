@@ -5,31 +5,31 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.7.1
+  tag: v5.11.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.12.0
+  tag: v4.16.0
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.4.0
+  tag: geos/v2.0.0
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: GCMv12-rc8
+  tag: GCMv12-rc15
   sparse: ./config/GMAO_Shared.sparse
   develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc11
+  tag: GCMv12-rc13
   develop: feature/sdrabenh/gcm_v12
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -37,17 +37,17 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.54.1
+  tag: v2.55.0
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc11
+  tag: GCMv12-rc14
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc11
+  tag: GCMv12-rc14
   develop: feature/sdrabenh/gcm_v12
