@@ -11,6 +11,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Removed
+
+### Deprecated
+
+## [2.22.0] - 2025-05-12
+
+### Added
+
 - Add Spack GCC CI build
 - Add Github CI build
 
@@ -24,10 +34,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - GMAO_perllib v1.1.0 (added)
   - MAPL v2.52.0 → v2.55.0
   - FVdycoreCubed_GridComp v2.13.0 → v2.14.0
-
-### Removed
-
-### Deprecated
 
 ## [2.21.0] - 2025-01-28
 
