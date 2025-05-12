@@ -11,13 +11,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add Spack GCC CI build
-
 ### Changed
 
 ### Removed
 
 ### Deprecated
+
+## [2.22.0] - 2025-05-12
+
+### Added
+
+- Add Spack GCC CI build
+- Add Github CI build
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-05-12
+  - ESMA_env v4.34.1 → v4.37.0
+  - ESMA_cmake v3.56.0 → v3.61.0
+  - GMAO_Shared v1.9.9 → v2.1.0
+  - GEOS_Util v2.1.6 → v2.1.7
+  - GMAO_perllib v1.1.0 (added)
+  - MAPL v2.52.0 → v2.55.0
+  - FVdycoreCubed_GridComp v2.13.0 → v2.14.0
 
 ## [2.21.0] - 2025-01-28
 

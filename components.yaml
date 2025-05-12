@@ -5,13 +5,13 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v4.34.1
+  tag: v4.37.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.56.0
+  tag: v3.61.0
   develop: develop
 
 ecbuild:
@@ -22,14 +22,20 @@ ecbuild:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v1.9.9
+  tag: v2.1.0
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.6
+  tag: v2.1.7
+  develop: main
+
+GMAO_perllib:
+  local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
+  remote: ../GMAO_perllib.git
+  tag: v1.1.0
   develop: main
 
 # When updating the MAPL version, also update the MAPL version in the
@@ -37,7 +43,7 @@ GEOS_Util:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.52.0
+  tag: v2.55.0
   develop: develop
 
 FMS:
@@ -49,7 +55,7 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.13.0
+  tag: v2.14.0
   develop: develop
 
 fvdycore:
