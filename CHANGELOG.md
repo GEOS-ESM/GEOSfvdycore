@@ -17,6 +17,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.23.0] - 2025-05-13
+
+### Added
+
+- Added new `BUILD_INFO.rc` file
+
+### Changed
+
+- Update to `components.yaml` to fix f2py issues
+  - ESMA_env v4.37.0 → v4.38.0
+  - ESMA_cmake v3.61.0 → v3.62.0
+  - GMAO_Shared v2.1.0 → v2.1.1
+
 ## [2.22.0] - 2025-05-12
 
 ### Added
