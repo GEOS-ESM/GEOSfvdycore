@@ -16,7 +16,7 @@ parameters:
 
 # Anchors to prevent forgetting to update a version
 os_version: &os_version ubuntu24
-baselibs_version: &baselibs_version v7.29.0
+baselibs_version: &baselibs_version v7.33.0
 bcs_version: &bcs_version v11.6.0
 tag_build_arg_name: &tag_build_arg_name fv3version
 
@@ -34,7 +34,9 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [gfortran, ifort, ifx]
+              # ifx has issues with FMS
+              #compiler: [gfortran, ifort, ifx]
+              compiler: [gfortran, ifort]
               fv_precision: ["R4", "R8"]
           baselibs_version: *baselibs_version
           repo: GEOSfvdycore
@@ -48,7 +50,9 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              compiler: [gfortran, ifort, ifx]
+              # ifx has issues with FMS
+              #compiler: [gfortran, ifort, ifx]
+              compiler: [gfortran, ifort]
               fv_precision: ["R4", "R8"]
           baselibs_version: *baselibs_version
           requires:
@@ -78,24 +82,24 @@ workflows:
           image_name: geos-env
           tag_build_arg_name: *tag_build_arg_name
           resource_class: xlarge
-      - ci/publish_docker:
-          filters:
-            tags:
-              only: /^v.*$/
-          name: publish-ifx-docker-image
-          context:
-            - docker-hub-creds
-            - ghcr-creds
-          os_version: *os_version
-          baselibs_version: *baselibs_version
-          container_name: geosfvdycore
-          mpi_name: intelmpi
-          mpi_version: "2021.14"
-          compiler_name: ifx
-          compiler_version: "2025.0"
-          image_name: geos-env
-          tag_build_arg_name: *tag_build_arg_name
-          resource_class: xlarge
+      #- ci/publish_docker:
+          #filters:
+            #tags:
+              #only: /^v.*$/
+          #name: publish-ifx-docker-image
+          #context:
+            #- docker-hub-creds
+            #- ghcr-creds
+          #os_version: *os_version
+          #baselibs_version: *baselibs_version
+          #container_name: geosfvdycore
+          #mpi_name: intelmpi
+          #mpi_version: "2021.14"
+          #compiler_name: ifx
+          #compiler_version: "2025.0"
+          #image_name: geos-env
+          #tag_build_arg_name: *tag_build_arg_name
+          #resource_class: xlarge
       - ci/publish_docker:
           filters:
             tags:
