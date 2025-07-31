@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.19.1
+  tag: v4.19.2
   develop: develop
 
 ecbuild:
@@ -29,7 +29,7 @@ GMAO_Shared:
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: GCMv12-rc17
+  tag: GCMv12-rc18
   develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
@@ -43,7 +43,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.57.0
+  tag: v2.58.1
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
@@ -55,5 +55,5 @@ FVdycoreCubed_GridComp:
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
-  tag: GCMv12-rc14
+  tag: GCMv12-rc16
   develop: feature/sdrabenh/gcm_v12
