@@ -17,6 +17,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.25.0] - 2025-09-10
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-07-05
+  - ESMA_env v4.38.0 → v5.13.0
+  - ESMA_cmake v3.62.1 → v3.64.0
+  - GMAO_Shared v2.1.3 → v2.1.4
+  - GEOS_Util v2.1.9 → v2.1.10
+  - MAPL v2.57.0 → v2.59.0
+- Update CI to use Baselibs 8.18.0
+
 ## [2.24.0] - 2025-07-07
 
 ### Changed
