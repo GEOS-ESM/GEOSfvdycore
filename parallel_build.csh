@@ -44,7 +44,7 @@ else
       exit 1
    else
       echo "Running mepo clone"
-      mepo clone
+      mepo clone --partial blobless
       if ( "$DEVELOP" == "TRUE" ) then
          echo "Checking out development branches of GMAO_Shared and GEOS_Util"
          mepo develop GMAO_Shared GEOS_Util
