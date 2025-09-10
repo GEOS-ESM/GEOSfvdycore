@@ -49,7 +49,7 @@ MAPL:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: GCMv12-rc19
+  tag: GCMv12-rc19-with-r8-fix
   develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
