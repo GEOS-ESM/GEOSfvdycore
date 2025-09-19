@@ -101,7 +101,7 @@ if (NOT Baselibs_FOUND)
     endif ()
   endif ()
 
-  find_package(MAPL 2.59 QUIET)
+  find_package(MAPL 2.61 QUIET)
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()

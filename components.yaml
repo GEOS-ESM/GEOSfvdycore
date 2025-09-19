@@ -43,7 +43,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.59.0
+  tag: v2.61.0
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
