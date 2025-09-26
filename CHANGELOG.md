@@ -17,6 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.27.0] - 2025-09-26
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-09-19
+  - ESMA_env v5.13.0 → v5.14.0
+  - ESMA_cmake v3.64.0 → v3.65.0
+  - GEOS_Util v2.1.10 → v2.1.11
+  - MAPL v2.59.0 → v2.61.0
+  - FVdycoreCubed_GridComp v2.14.1 → v2.15.0
+
 ## [2.26.0] - 2025-09-19
 
 ### Changed
