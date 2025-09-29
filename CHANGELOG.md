@@ -17,6 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [3.0.0] - 202X-XX-XX
+
+### Changed
+
+- Update components to match GEOSgcm v12
+
 ## [2.27.0] - 2025-09-26
 
 ### Changed

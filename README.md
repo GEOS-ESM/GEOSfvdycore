@@ -18,29 +18,17 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 umask 0022
 ulimit -s unlimited
 
-# Look for the OS version and set the module path accordingly
-OS_VERSION=$(grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1 | sed 's/"//g')
-
 # Run things in this if-block only if we're in an interactive shell
 if [[ $- == *i* ]]
 then
 
    # Only put module use or other module commands here
    # and in the correct OS version
-   if [[ "$OS_VERSION" == "15" ]]
-   then
-      export LMOD_SYSTEM_NAME=SLES15
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module load GEOSenv
-   else
-      export LMOD_SYSTEM_NAME=SLES12
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module load GEOSenv
-   fi
+
+   export LMOD_SYSTEM_NAME=SLES15
+   module purge
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
+   module load GEOSenv
 
    # Add any other things you want with interactive shells here
 
@@ -53,27 +41,17 @@ fi
 umask 0022
 limit stacksize unlimited
 
-# Look for the OS version and set the module path accordingly
-set OS_VERSION=`grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1 | sed 's/"//g'`
-
 # Run things in this if-block only if we are in an interactive shell
 if ($?prompt) then
 
    # Only put module use or other module commands here
    # and in the correct OS version
-   if ($OS_VERSION == 15) then
-      setenv LMOD_SYSTEM_NAME SLES15
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module load GEOSenv
-   else
-      setenv LMOD_SYSTEM_NAME SLES12
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module load GEOSenv
-   endif
+
+   setenv LMOD_SYSTEM_NAME SLES15
+   module purge
+   module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
+   module load GEOSenv
 
    # Add any other things you want with interactive shells here
 

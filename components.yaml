@@ -11,26 +11,26 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.65.0
+  tag: v4.23.1
   develop: develop
 
 ecbuild:
   local: ./@cmake/@ecbuild
   remote: ../ecbuild.git
-  tag: geos/v1.4.0
+  tag: geos/v2.1.0
 
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.1.4
+  tag: GCMv12-rc19
   sparse: ./config/GMAO_Shared.sparse
-  develop: main
+  develop: feature/sdrabenh/gcm_v12
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
   branch: release/MAPL-v3
-  develop: main
+  develop: feature/sdrabenh/gcm_v12
 
 GMAO_perllib:
   local: ./src/Shared/@GMAO_Shared/@GMAO_perllib
@@ -44,23 +44,16 @@ MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
   branch: release/MAPL-v3
-  develop: develop
-
-FMS:
-  local: ./src/Shared/@FMS
-  remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.10
-  develop: geos/release/2019.01
+  develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
   branch: release/MAPL-v3
-  develop: develop
+  develop: feature/sdrabenh/gcm_v12
 
 fvdycore:
   local: ./src/Components/@FVdycoreCubed_GridComp/@fvdycore
   remote: ../GFDL_atmos_cubed_sphere.git
   branch: geos/release/MAPL-v3
-  develop: geos/develop
-
+  develop: feature/sdrabenh/gcm_v12
