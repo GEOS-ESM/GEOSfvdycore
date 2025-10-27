@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v4.25.0
+  tag: v4.28.0
   develop: develop
 
 ecbuild:
@@ -43,7 +43,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.61.0
+  tag: v2.62.1
   develop: feature/sdrabenh/gcm_v12
 
 FVdycoreCubed_GridComp:
