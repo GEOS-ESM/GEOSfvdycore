@@ -17,6 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.30.0] - 2026-03-12
+
+### Changed
+
+- Update `components.yaml` with bugfix for FV3 Standalone
+  - FVdycoreCubed_GridComp v2.15.0 → v2.16.0
+
 ## [2.29.0] - 2026-03-12
 
 ### Changed

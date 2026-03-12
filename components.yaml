@@ -55,7 +55,7 @@ FMS:
 FVdycoreCubed_GridComp:
   local: ./src/Components/@FVdycoreCubed_GridComp
   remote: ../FVdycoreCubed_GridComp.git
-  tag: v2.16.0
+  tag: v2.16.1
   develop: develop
 
 fvdycore:
