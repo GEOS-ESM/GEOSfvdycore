@@ -22,6 +22,9 @@ ulimit -s unlimited
 if [[ $- == *i* ]]
 then
 
+   # Only put module use or other module commands here
+   # and in the correct OS version
+
    export LMOD_SYSTEM_NAME=SLES15
    module purge
    module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
@@ -40,6 +43,9 @@ limit stacksize unlimited
 
 # Run things in this if-block only if we are in an interactive shell
 if ($?prompt) then
+
+   # Only put module use or other module commands here
+   # and in the correct OS version
 
    setenv LMOD_SYSTEM_NAME SLES15
    module purge
