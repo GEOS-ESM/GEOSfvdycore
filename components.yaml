@@ -11,7 +11,7 @@ env:
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.69.0
+  tag: v3.73.0
   develop: develop
 
 ecbuild:
@@ -43,7 +43,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.64.1
+  tag: v2.67.0
   develop: develop
 
 FMS:
