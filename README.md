@@ -18,29 +18,14 @@ In your `.bashrc` or `.tcshrc` or other rc file add a line:
 umask 0022
 ulimit -s unlimited
 
-# Look for the OS version and set the module path accordingly
-OS_VERSION=$(grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1 | sed 's/"//g')
-
 # Run things in this if-block only if we're in an interactive shell
 if [[ $- == *i* ]]
 then
 
-   # Only put module use or other module commands here
-   # and in the correct OS version
-   if [[ "$OS_VERSION" == "15" ]]
-   then
-      export LMOD_SYSTEM_NAME=SLES15
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module load GEOSenv
-   else
-      export LMOD_SYSTEM_NAME=SLES12
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module load GEOSenv
-   fi
+   export LMOD_SYSTEM_NAME=SLES15
+   module purge
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
+   module load GEOSenv
 
    # Add any other things you want with interactive shells here
 
@@ -53,27 +38,13 @@ fi
 umask 0022
 limit stacksize unlimited
 
-# Look for the OS version and set the module path accordingly
-set OS_VERSION=`grep VERSION_ID /etc/os-release | cut -d= -f2 | cut -d. -f1 | sed 's/"//g'`
-
 # Run things in this if-block only if we are in an interactive shell
 if ($?prompt) then
 
-   # Only put module use or other module commands here
-   # and in the correct OS version
-   if ($OS_VERSION == 15) then
-      setenv LMOD_SYSTEM_NAME SLES15
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module load GEOSenv
-   else
-      setenv LMOD_SYSTEM_NAME SLES12
-      module purge
-      module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
-      module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
-      module load GEOSenv
-   endif
+   setenv LMOD_SYSTEM_NAME SLES15
+   module purge
+   module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
+   module load GEOSenv
 
    # Add any other things you want with interactive shells here
 
@@ -221,15 +192,15 @@ The first command initializes the multi-repository and the second one
 clones and assembles all the sub-repositories according to
 `components.yaml`
 
-#### Checking out develop branch of GMAO_Shared
+#### Checking out develop branches of GMAO_Shared and GEOS_Util
 
-To get development branch of GMAO_Shared (a la
+To get development branches of GMAO_Shared and GEOS_Util (a la
 the `-develop` flag for `parallel_build.csh`, one needs to run the
 equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
 subrepository is, the equivalent of `-develop` for `mepo` is to
-checkout the development branch of GMAO_Shared:
+checkout the development branch of GMAO_Shared and GEOS_Util:
 ```
-mepo develop GMAO_Shared
+mepo develop GMAO_Shared GEOS_Util
 ```
 
 This must be done *after* `mepo clone` as it is running a git command in
@@ -238,6 +209,7 @@ each sub-repository.
 #### Build the Model
 
 ##### Load Compiler, MPI Stack, and Baselibs
+
 On tcsh:
 ```
 source @env/g5_modules
@@ -248,16 +220,11 @@ source @env/g5_modules.sh
 ```
 
 ##### Create Build Directory
-We currently do not allow in-source builds of GEOSfvdycore. So we must make a directory:
-```
-mkdir build
-```
-The advantages of this is that you can build both a Debug and Release version with the same clone if desired.
 
 ##### Run CMake
+
 CMake generates the Makefiles needed to build the model.
 ```
-cd build
 cmake -B build --install-prefix=$(pwd)/install
 ```
 where `$BASEDIR` is the path to the directory where the model will be installed. This is typically the directory parallel to the `build` directory.

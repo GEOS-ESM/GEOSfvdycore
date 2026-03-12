@@ -13,7 +13,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated CI to use reusable workflows
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2026-03-12
+  - ESMA_cmake v3.69.0 → v3.73.0
+  - MAPL v2.64.1 → v2.67.0
+- Simplify README module setup instructions to only support SLES15 (drop SLES12 OS version detection)
+- Update README to include `GEOS_Util` in `mepo develop` command
+- Simplify README build instructions
 
 ### Removed
 
