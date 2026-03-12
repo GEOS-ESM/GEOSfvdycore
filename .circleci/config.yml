@@ -34,7 +34,6 @@ workflows:
             - docker-hub-creds
           matrix:
             parameters:
-              # ifx has issues with FMS
               #compiler: [gfortran, ifort, ifx]
               compiler: [gfortran, ifort]
               fv_precision: ["R4", "R8"]
