@@ -27,6 +27,7 @@ jobs:
     with:
       compiler: ${{ matrix.compiler }}
       cmake-build-type: ${{ matrix.build-type }}
+      fail-fast: false
       run-mepo-develop: false
 
   spack_build:

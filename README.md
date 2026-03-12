@@ -49,7 +49,6 @@ if ($?prompt) then
 
    setenv LMOD_SYSTEM_NAME SLES15
    module purge
-   module unuse -a /discover/swdev/gmao_SIteam/modulefiles-SLES12
    module use -a /discover/swdev/gmao_SIteam/modulefiles-SLES15
    module load GEOSenv
 
@@ -216,6 +215,7 @@ each sub-repository.
 #### Build the Model
 
 ##### Load Compiler, MPI Stack, and Baselibs
+
 On tcsh:
 ```
 source @env/g5_modules
@@ -226,16 +226,11 @@ source @env/g5_modules.sh
 ```
 
 ##### Create Build Directory
-We currently do not allow in-source builds of GEOSfvdycore. So we must make a directory:
-```
-mkdir build
-```
-The advantages of this is that you can build both a Debug and Release version with the same clone if desired.
 
 ##### Run CMake
+
 CMake generates the Makefiles needed to build the model.
 ```
-cd build
 cmake -B build --install-prefix=$(pwd)/install
 ```
 where `$BASEDIR` is the path to the directory where the model will be installed. This is typically the directory parallel to the `build` directory.
