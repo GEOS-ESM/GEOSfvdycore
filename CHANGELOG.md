@@ -23,6 +23,62 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update components to match GEOSgcm v12
 
+## [2.29.0] - 2026-03-12
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2026-03-12
+  - ESMA_cmake v3.69.0 → v3.73.0
+  - MAPL v2.64.1 → v2.67.0
+- Simplify README module setup instructions to only support SLES15 (drop SLES12 OS version detection)
+- Update README to include `GEOS_Util` in `mepo develop` command
+- Simplify README build instructions
+
+## [2.28.0] - 2026-01-14
+
+### Changed
+
+- Updated CI to use reusable workflows
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2026-01-14
+  - ESMA_env v5.14.0 → v5.17.0
+  - ESMA_cmake v3.65.0 → v3.69.0
+  - GMAO_Shared v2.1.4 → v2.1.6
+  - GEOS_Util v2.1.11 → v2.1.12
+  - MAPL v2.61.0 → v2.64.1
+  - FVdycoreCubed_GridComp v2.15.0 → v2.16.0
+  - fvdycore geos/v2.9.1 → geos/v2.10.0
+
+## [2.27.0] - 2025-09-26
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-09-19
+  - ESMA_env v5.13.0 → v5.14.0
+  - ESMA_cmake v3.64.0 → v3.65.0
+  - GEOS_Util v2.1.10 → v2.1.11
+  - MAPL v2.59.0 → v2.61.0
+  - FVdycoreCubed_GridComp v2.14.1 → v2.15.0
+
+## [2.26.0] - 2025-09-19
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-09-19
+  - MAPL v2.59.0 → v2.59.1
+- Update CI to use Baselibs 8.19.0
+
+## [2.25.0] - 2025-09-10
+
+### Changed
+
+- Update to `components.yaml` to match or exceed GEOSgcm `main` as of 2025-07-05
+  - ESMA_env v4.38.0 → v5.13.0
+  - ESMA_cmake v3.62.1 → v3.64.0
+  - GMAO_Shared v2.1.3 → v2.1.4
+  - GEOS_Util v2.1.9 → v2.1.10
+  - MAPL v2.57.0 → v2.59.0
+- Update CI to use Baselibs 8.18.0
+
 ## [2.24.0] - 2025-07-07
 
 ### Changed

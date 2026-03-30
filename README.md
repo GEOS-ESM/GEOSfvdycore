@@ -198,15 +198,15 @@ The first command initializes the multi-repository and the second one
 clones and assembles all the sub-repositories according to
 `components.yaml`
 
-#### Checking out develop branch of GMAO_Shared
+#### Checking out develop branches of GMAO_Shared and GEOS_Util
 
-To get development branch of GMAO_Shared (a la
+To get development branches of GMAO_Shared and GEOS_Util (a la
 the `-develop` flag for `parallel_build.csh`, one needs to run the
 equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
 subrepository is, the equivalent of `-develop` for `mepo` is to
-checkout the development branch of GMAO_Shared:
+checkout the development branch of GMAO_Shared and GEOS_Util:
 ```
-mepo develop GMAO_Shared
+mepo develop GMAO_Shared GEOS_Util
 ```
 
 This must be done *after* `mepo clone` as it is running a git command in
