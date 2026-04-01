@@ -5,13 +5,13 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.17.0
+  tag: v5.21.0
   develop: main
 
 cmake:
   local: ./@cmake
   remote: ../ESMA_cmake.git
-  tag: v3.73.0
+  tag: v3.75.0
   develop: develop
 
 ecbuild:
@@ -49,7 +49,7 @@ MAPL:
 FMS:
   local: ./src/Shared/@FMS
   remote: ../FMS.git
-  tag: geos/2019.01.02+noaff.10
+  tag: geos/2019.01.02+noaff.11
   develop: geos/release/2019.01
 
 FVdycoreCubed_GridComp:
