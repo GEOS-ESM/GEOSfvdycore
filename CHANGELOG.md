@@ -17,6 +17,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [2.30.0] - 2026-04-01
+
+### Changed
+
+- Update `components.yaml` with bugfix for FV3 Standalone and to match or exceed GEOSgcm `main` as of 2026-04-01A
+  - ESMA_env v5.17.0 → v5.21.0
+  - ESMA_cmake v3.73.0 → v3.75.0
+  - FVdycoreCubed_GridComp v2.15.0 → v2.16.1
+  - FMS geos/2019.01.02+noaff.10 → geos/2019.01.02+noaff.11
+
 ## [2.29.0] - 2026-03-12
 
 ### Changed
