@@ -44,7 +44,7 @@ MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
   tag: v2.67.0
-  develop: develop
+  develop: release/v2
 
 FMS:
   local: ./src/Shared/@FMS
