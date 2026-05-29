@@ -23,6 +23,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Update components to match GEOSgcm v12
 
+## [2.31.0] - 2026-05-29
+
+### Changed
+
+- Update `components.yaml` to match GEOSgcm v11.9.1
+  - ESMA_env v5.21.0 → v5.22.0
+  - GMAO_Shared v2.1.6 → v2.1.7
+  - GEOS_Util v2.1.12 → v2.1.17
+  - MAPL v2.67.0 → v2.69.1
+
+## [2.30.0] - 2026-04-01
+
+### Changed
+
+- Update `components.yaml` with bugfix for FV3 Standalone and to match or exceed GEOSgcm `main` as of 2026-04-01A
+  - ESMA_env v5.17.0 → v5.21.0
+  - ESMA_cmake v3.73.0 → v3.75.0
+  - FVdycoreCubed_GridComp v2.15.0 → v2.16.1
+  - FMS geos/2019.01.02+noaff.10 → geos/2019.01.02+noaff.11
+
 ## [2.29.0] - 2026-03-12
 
 ### Changed

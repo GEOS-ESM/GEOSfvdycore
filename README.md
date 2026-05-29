@@ -58,11 +58,13 @@ endif
 ```
 
 ##### NAS
+
 ```
 module use -a /nobackup/gmao_SIteam/modulefiles
 ```
 
 ##### GMAO Desktops
+
 On the GMAO desktops, the SI Team modulefiles should automatically be
 part of running `module avail` but if not, they are in:
 
