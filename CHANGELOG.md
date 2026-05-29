@@ -21,7 +21,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update components to match GEOSgcm v12
+- Update components to match GEOSgcm v12 as of 2026-05-29
+  - ESMA_cmake v4.37.0
+  - GMAO_Shared v3.0.0
+  - GEOS_Util v3.0.0
+  - FVdycoreCubed_GridComp v3.0.0
+  - fvdycore geos/v3.0.0
+  - Remove FMS as it is now in Baselibs
 
 ## [2.31.0] - 2026-05-29
 
