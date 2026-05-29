@@ -5,7 +5,7 @@ GEOSfvdycore:
 env:
   local: ./@env
   remote: ../ESMA_env.git
-  tag: v5.21.0
+  tag: v5.22.0
   develop: main
 
 cmake:
@@ -22,14 +22,14 @@ ecbuild:
 GMAO_Shared:
   local: ./src/Shared/@GMAO_Shared
   remote: ../GMAO_Shared.git
-  tag: v2.1.6
+  tag: v2.1.7
   sparse: ./config/GMAO_Shared.sparse
   develop: main
 
 GEOS_Util:
   local: ./src/Shared/@GMAO_Shared/@GEOS_Util
   remote: ../GEOS_Util.git
-  tag: v2.1.12
+  tag: v2.1.17
   develop: main
 
 GMAO_perllib:
@@ -43,7 +43,7 @@ GMAO_perllib:
 MAPL:
   local: ./src/Shared/@MAPL
   remote: ../MAPL.git
-  tag: v2.67.0
+  tag: v2.69.1
   develop: release/v2
 
 FMS:
