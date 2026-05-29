@@ -20,6 +20,7 @@ concurrency:
 jobs:
   build_fv3:
     strategy:
+      fail-fast: false
       matrix:
         compiler: [ifort, gfortran-14, gfortran-15]
         build-type: [Debug]
@@ -27,7 +28,6 @@ jobs:
     with:
       compiler: ${{ matrix.compiler }}
       cmake-build-type: ${{ matrix.build-type }}
-      fail-fast: false
       run-mepo-develop: false
 
   spack_build:
