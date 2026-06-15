@@ -101,7 +101,7 @@ if (NOT Baselibs_FOUND)
     endif ()
   endif ()
 
-  find_package(MAPL 2.67 QUIET)
+  find_package(MAPL 2.69 QUIET)
   if (MAPL_FOUND)
     message(STATUS "Found MAPL: ${MAPL_BASE_DIR} (found version \"${MAPL_VERSION})\"")
   endif ()
@@ -110,7 +110,7 @@ endif ()
 
 ecbuild_declare_project()
 
-# Generic DFLAGS
+# Generic definitions
 # These should be relocated and/or eliminated.
 add_definitions(-Dsys${CMAKE_SYSTEM_NAME} -DESMA64)
 add_definitions(${MPI_Fortran_COMPILE_FLAGS})
