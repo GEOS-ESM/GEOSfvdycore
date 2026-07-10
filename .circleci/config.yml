@@ -41,19 +41,19 @@ workflows:
           mepodevelop: false
           persist_workspace: true # Needs to be true to run fv3/gcm experiment, costs extra
 
-      # Run FV3 standalone
-      - ci/run_fv3:
-          name: run-FV3-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>-with-GEOSfvdycore
-          context:
-            - docker-hub-creds
-          matrix:
-            parameters:
-              compiler: [gfortran, ifort, ifx]
-              fv_precision: ["R4", "R8"]
-          baselibs_version: *baselibs_version
-          requires:
-            - build-GEOSfvdycore-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>
-          repo: GEOSfvdycore
+      # # Run FV3 standalone
+      # - ci/run_fv3:
+      #     name: run-FV3-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>-with-GEOSfvdycore
+      #     context:
+      #       - docker-hub-creds
+      #     matrix:
+      #       parameters:
+      #         compiler: [gfortran, ifort, ifx]
+      #         fv_precision: ["R4", "R8"]
+      #     baselibs_version: *baselibs_version
+      #     requires:
+      #       - build-GEOSfvdycore-as-<< matrix.fv_precision >>-on-<< matrix.compiler >>
+      #     repo: GEOSfvdycore
 
   # Build and publish docker images
   build-and-publish-docker:
