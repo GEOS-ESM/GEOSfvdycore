@@ -1,9 +1,9 @@
-name: Push to v12
+name: Push to main
 
 on:
   push:
     branches:
-      - feature/sdrabenh/gcm_v12
+      - main
 
 jobs:
   pull_request:
@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Run the action
-        uses: devops-infra/action-pull-request@v1.3.0
+        uses: devops-infra/action-pull-request@v1.4.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_branch: feature/sdrabenh/gcm_v12
+          source_branch: main
           target_branch: release/MAPL-v3
           label: automatic,MAPL3,Skip Changelog
           template: .github/PULL_REQUEST_TEMPLATE/auto_pr_to_mapl3.md
@@ -26,5 +26,5 @@ jobs:
           assignee: ${{ github.actor }}
           old_string: "<!-- Write your description here -->"
           new_string: ${{ github.event.commits[0].message }}
-          title: Auto PR - v12 → MAPL-v3 - ${{ github.event.commits[0].message }}
+          title: Auto PR - main → MAPL-v3 - ${{ github.event.commits[0].message }}
 
