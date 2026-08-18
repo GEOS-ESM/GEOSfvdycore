@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Deprecated
 
+## [3.2.0] - 2026-08-14
+
+- Update ESMA_cmake to v4.43.0
+  - Better support for Spack
+
 ## [3.1.0] - 2026-07-20
 
 - Update components to match GEOSgcm main as of 2026-07-20
