@@ -172,7 +172,7 @@ parallel_build.csh -develop
 then `mepo` will run:
 
 ```
-mepo develop GMAO_Shared
+mepo develop GMAO_Shared GEOS_Util
 ```
 
 #### Debug Version of GEOSfvdycore
@@ -206,7 +206,7 @@ To get development branches of GMAO_Shared and GEOS_Util (a la
 the `-develop` flag for `parallel_build.csh`, one needs to run the
 equivalent `mepo` command. As mepo itself knows (via `components.yaml`) what the development branch of each
 subrepository is, the equivalent of `-develop` for `mepo` is to
-checkout the development branch of GMAO_Shared and GEOS_Util:
+checkout the development branches of GMAO_Shared and GEOS_Util:
 ```
 mepo develop GMAO_Shared GEOS_Util
 ```
